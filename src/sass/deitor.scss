@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import 'foundation/foundation';
+@import "layout/function";
+// --------------------------------------------------------
+/* Container Style*/
+// --------------------------------------------------------
+$green:#2b963d;
+$yellow:#2b963d;
+$block3:#3d3d3d;
+$block4:#4a4a4a;
+$block6:#666666;
+$rad:#c43632;
+$white:#ffffff;
+.news_htmlbox{
+  .newscenter{
+    h2{font-size:28px;margin:15px 0;}
+    p{color:$block3;line-height:160%;}
+    table{border-collapse: collapse;
+      td{border: 1px solid #d5d5d5;}
+    }
+  }
+}
+
+
+
+// --------------------------------------------------------
+/* Animate Style*/
+// --------------------------------------------------------
+@keyframes bg{
+ 0%{}
+ 100%{}
+}

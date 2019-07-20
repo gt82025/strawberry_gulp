@@ -1,0 +1,59 @@
+extends _layout
+block page_title
+  title 商品列表
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/news.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+		
+      //頁碼置中
+      var pagelinksh_width = 0 ;
+      $('.pageLinks .center_links a, .pageLinks .center_links strong').each(function(key, value){
+        pagelinksh_width += ( $(this).width() + 2 + 10 );
+      });
+      $('.pageLinks').width(pagelinksh_width);
+    });
+block content
+  mixin news_slider (sortname)
+    a(href="news_view.html").swiper-slide
+      .slidercenter
+        //照片尺寸為w500px x h600px
+        .newsimg
+          img(src="images/index/proimg1.jpg", alt="")
+          .addicon
+        h6.sortname=sortname
+        h6.newstext 草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！
+        h6.newstime 2019-07-01
+  section.project_tab
+    .project_center
+      .swiper-container.gallery-thumbs
+        .swiper-wrapper
+          // 標籤分類文字不超過六個字
+          .swiper-slide: p 消息總攬
+          .swiper-slide: p 草果新訊
+          .swiper-slide: p 媒體報導
+        i.arrowicon.be-icon.be-icon-prev
+        i.arrowicon.be-icon.be-icon-next
+
+  
+  section.news_content
+    .newscenter
+      // 商品照片尺存為w280px x h320px
+      +news_slider('最新消息')
+      +news_slider('媒體報導')
+      +news_slider('最新消息')
+      +news_slider('最新消息')
+      +news_slider('媒體報導')
+      +news_slider('最新消息')
+    .pageLinks
+      .center_links
+        span.prev <a href=""><</a>
+        strong 1
+        a(href="") 2
+        a(href="") ...
+        a(href="") 10
+        span.next <a href="">></a>	
+    

@@ -1,0 +1,55 @@
+extends _layout
+block page_title
+  title 商品列表
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/product.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript" src="js/product.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+    });
+block content
+  mixin pro_box (img, prename)
+    .pro_box
+      a(href="product_view.html").proimg: img(src=img, alt="")
+      .pro_article
+        h2.pro_name=prename
+        h4.subtitle ( 2盒裝 ) 20顆/盒
+        .pricebox
+          p.price.cost 原價 $400
+          p.price.offer 會員價 <span>$300</span>
+        .addcar
+          .amount
+            select(name="")
+              option(value="") 1
+              option(value="") 2
+              option(value="") 3
+            i.selectarrow.be-icon.be-icon-next
+          a(href="").addcar_btn
+            .intername 加入購物車
+  section.project_tab
+    .project_center
+      .swiper-container.gallery-thumbs
+        .swiper-wrapper
+          // 標籤分類文字不超過六個字
+          .swiper-slide: p 促銷商品
+          .swiper-slide: p 新鮮水果
+          .swiper-slide: p 夠青蔬菜
+          .swiper-slide: p 厲害草莓
+          .swiper-slide: p 厲害草莓
+        i.arrowicon.be-icon.be-icon-prev
+        i.arrowicon.be-icon.be-icon-next
+
+  
+  section.product_content
+    .productcenter
+      // 商品照片尺存為w280px x h320px
+      +pro_box("images/index/proimg1.jpg",'小果草莓')
+      +pro_box("images/index/proimg4.jpg",'大果草莓')
+      +pro_box("images/index/proimg3.jpg",'中果草莓')
+      +pro_box("images/index/proimg3.jpg",'神奇野莓')
+      +pro_box("images/index/proimg1.jpg",'神奇海螺')
+      +pro_box("images/index/proimg4.jpg",'驚奇草莓')
+    

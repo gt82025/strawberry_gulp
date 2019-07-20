@@ -1,0 +1,161 @@
+extends _layout
+block page_title
+  title 商品資訊
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/product.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript" src="js/product.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+      //最新消息輪播
+      var swiper_news1 = new Swiper('.swiper-container.pro_imgslider', {
+        speed: 1200,
+        autoplay: false,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        loop: true, //循環撥放
+        spaceBetween: 0,
+        slidesPerView : 1,
+        slidesPerGroup: 1,
+        autoHeight: true,
+        watchOverflow: true,
+        simulateTouch: true,
+        effect: "fade", //Could be "slide", "fade", "cube", "coverflow" or "flip"
+        pagination: {
+          el: '.pro_imgslider .swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.pro_imgslider .arrow.next',
+          prevEl: '.pro_imgslider .arrow.prev',
+        }
+      });
+      //推薦商品
+      var recommend_slider = new Swiper('.productcenter .swiper-container.recommend_slider', {
+        speed: 1200,
+        autoplay: false,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        loop: true, //循環撥放
+        spaceBetween: 0,
+        slidesPerView : 3,
+        slidesPerGroup: 1,
+        autoHeight: true,
+        watchOverflow: true,
+        simulateTouch: true,
+        effect: "slide", //Could be "slide", "fade", "cube", "coverflow" or "flip"
+        navigation: {
+          nextEl: '.reco_nextarrow',
+          prevEl: '.reco_prevarrow',
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            offsetPxAfter: 50,
+            loop: false
+          },
+          960: {
+            slidesPerView: 2,
+            loop: true, //循環撥放
+          },
+          1920: {
+            slidesPerView: 3
+          },
+          5000: {
+            slidesPerView: 3
+          }
+        }
+      });
+    });
+block content
+  mixin pro_box (img, prename)
+    .swiper-slide
+      .pro_box
+        a(href="product_view.html").proimg: img(src=img, alt="")
+        .pro_article
+          h2.pro_name=prename
+          h4.subtitle ( 2盒裝 ) 20顆/盒
+          .pricebox
+            p.price.cost 原價 $400
+            p.price.offer 會員價 <span>$300</span>
+          .addcar
+            .amount
+              select(name="")
+                option(value="") 1
+                option(value="") 2
+                option(value="") 3
+              i.selectarrow.be-icon.be-icon-next
+            a(href="").addcar_btn
+              .intername 加入購物車
+
+
+  section.project_tab
+    .project_center
+      .swiper-container.gallery-thumbs
+        .swiper-wrapper
+          // 標籤分類文字不超過六個字
+          .swiper-slide: p 促銷商品
+          .swiper-slide: p 新鮮水果
+          .swiper-slide: p 夠青蔬菜
+        i.arrowicon.be-icon.be-icon-prev
+        i.arrowicon.be-icon.be-icon-next
+
+  
+  section.product_content
+    .productcenter.view
+      .pro_detail.mo
+        .product_article
+          h1.pro_name 小果草莓
+          h2.subtitle ( 2盒裝 ) 20顆/盒
+      .swiper-container.pro_imgslider
+        .swiper-wrapper
+          // 商品照片尺存為w280px x h320px
+          .swiper-slide: img(src="images/index/proimg1.jpg", alt="")
+          .swiper-slide: img(src="images/index/proimg4.jpg", alt="")
+          .swiper-slide: img(src="images/index/proimg3.jpg", alt="")
+        .swiper-pagination
+        .arrow.next
+          i.arrowicon.be-icon.be-icon-next
+        .arrow.prev
+          i.arrowicon.be-icon.be-icon-prev
+      .pro_detail
+        .product_article
+          h1.pro_name 小果草莓
+          h2.subtitle ( 2盒裝 ) 20顆/盒
+          .pricebox
+            p.price.cost 原價 $400
+            p.price.offer  會員價 <span>$300</span>
+          p.describe.title 商品描述：
+          p.describe.word 安全等級：無農藥、無生長激素(產銷履歷)<br>小型果香氣依然濃郁，分毫不減，出貨以訂單時間排序，出貨當日會以E-mail通知，要記得收信喔。
+          .addcar
+            .amount
+              .selectbox
+                select(name="")
+                  option(value="") 1
+                  option(value="") 2
+                  option(value="") 3
+                i.selectarrow.be-icon.be-icon-next
+            a(href="").interchangeable_button
+              i.intericon.be-icon.be-icon-cart
+              .intername 加入購物車
+  section.recommend_pro
+    .project_titlebox
+      h1.project_title 推薦商品
+      h2.project_subtitle Recommend Products
+    .productcenter
+      .swiper-container.recommend_slider
+        .swiper-wrapper
+          // 商品照片尺存為w280px x h320px
+          +pro_box("images/index/proimg1.jpg",'小果草莓')
+          +pro_box("images/index/proimg4.jpg",'大果草莓')
+          +pro_box("images/index/proimg3.jpg",'中果草莓')
+          +pro_box("images/index/proimg3.jpg",'神奇野莓')
+          +pro_box("images/index/proimg1.jpg",'神奇海螺')
+          +pro_box("images/index/proimg4.jpg",'驚奇草莓')
+      .reco_prevarrow: .prevbox: h6 PREV
+      .reco_nextarrow: .nextbox: h6 NEXT
+
+
+    

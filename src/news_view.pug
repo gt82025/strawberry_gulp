@@ -1,0 +1,80 @@
+extends _layout
+block page_title
+  title 商品列表
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/news.min.css")
+  link(type="text/css" , rel="stylesheet", href="css/editor.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+		
+      //頁碼置中
+      var pagelinksh_width = 0 ;
+      $('.pageLinks .center_links a, .pageLinks .center_links strong').each(function(key, value){
+        pagelinksh_width += ( $(this).width() + 2 + 10 );
+      });
+      $('.pageLinks').width(pagelinksh_width);
+    });
+block content
+  mixin news_slider (sortname)
+    a(href="").swiper-slide
+      .slidercenter
+        //照片尺寸為w500px x h600px
+        .newsimg
+          img(src="images/index/proimg1.jpg", alt="")
+          .addicon
+        h6.sortname=sortname
+        h6.newstext 草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！
+        h6.newstime 2019-07-01
+  section.project_tab
+    .project_center
+      .swiper-container.gallery-thumbs
+        .swiper-wrapper
+          // 標籤分類文字不超過六個字
+          .swiper-slide: p 消息總攬
+          .swiper-slide: p 草果新訊
+          .swiper-slide: p 媒體報導
+        i.arrowicon.be-icon.be-icon-prev
+        i.arrowicon.be-icon.be-icon-next
+
+  
+  section.news_content
+    .newscenter.view
+      .newsimg: img(src="images/index/proimg1.jpg",alt="")
+      .newstitle
+        p.sort 最新消息
+        h2.name 草菓農場幸運大轉盤好康歡樂送！ 幸運輪盤轉轉樂
+        .line
+        .date
+          i.dateicon.be-icon.be-icon-booking
+          p.datetext 2019-07-01
+        a(href="news_list.html").backarrow
+          i.backicon.be-icon.be-icon-buttonarrow
+  section.news_htmlbox
+    .newscenter
+      h2(style="color:#2b963d;") 戀戀草莓季，酸甜酸甜好滋味！
+      p 草莓是薔薇科草莓屬植物的通稱，屬多年生草本植物。有著鮮紅嬌嫩的外表，酸甜的風味以及濃郁的水果香，深受消費者喜愛。富含多種營養成分，大量的維生素（C、B1、B2）、糖類（果糖、蔗糖）、有機酸（檸檬酸、蘋果酸、水楊酸）及礦物質（鈣、鉀、磷、鐵、鉻、鋅），其中維生素C的含量，更是蘋果的10倍，每100公克的草莓，含有62毫克的維生素C，堪稱水果之后，快來感受有機草莓的甜蜜滋味吧！
+      h2(style="color:#2b963d;") 歡樂價(含運)
+      table
+        tr
+          td 12粒裝
+          td 250公克±10g ，2盒入900元。
+        tr
+          td 12粒裝
+          td 250公克±10g ，2盒入900元。
+        tr
+          td 12粒裝
+          td 250公克±10g ，2盒入900元。
+      h2(style="color:#2b963d;") 除了新鮮大口吃，還可以自己動手做草莓大福！<br>
+      p QQ彈牙的麻糬外皮，包裹著酸酸甜甜的草莓與甜而不膩的紅豆泥，多層次的口感，讓人垂涎三尺！<br>
+        | 食材準備：熟太白粉(適量)；溫開水(120毫升)、糯米粉(100克)、白砂糖(25克)；紅豆泥(100克)；草莓(4顆)。<br><br>
+        |  步驟如下：<br>
+        |  1. 將糯米粉、白砂糖、水倒入碗中，攪拌均勻，放入先預熱好的電鍋蒸5分鐘。<br>
+        |  2. 從電鍋中拿出，將糯米糰稍微攪拌，再放回電鍋蒸3分鐘。<br>
+        |  3. 蒸好的糯米糰用保鮮膜包起，桿平成厚度均勻的一片。<br>
+        |  4. 將草莓包裹至紅豆泥內。<br>
+        |  5. 先將一小塊糯米糰均勻沾裹熟太白粉，把餡料放入糯米糰中，將收口處捏緊就完成囉～<br>
+
+
