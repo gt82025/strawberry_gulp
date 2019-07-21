@@ -44,6 +44,20 @@ header{
 		}
 	}
 }
+.mo_logo{
+	&.top{
+		img{
+			&.color{display:none;}
+			&.white{display:block;}
+		}
+	}
+	&.scroll{
+		img{
+			&.color{display:block;}
+			&.white{display:none;}
+		}
+	}
+}
 .banner{
   width:100vw;
   min-height:950px;

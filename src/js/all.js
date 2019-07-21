@@ -221,6 +221,7 @@ if(b){
 		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length > 5){
 		  $('.gallery-thumbs .arrowicon').addClass('full');
 		}
+		var windows_w = $(window).width();
 		var gallery_w = $('.gallery-thumbs').width();
 		console.log(windows_w);
 		console.log(gallery_w);

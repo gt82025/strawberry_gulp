@@ -13,10 +13,17 @@ $rad:#c43632;
 $white:#ffffff;
 .news_htmlbox{
   .newscenter{
-    h2{font-size:28px;margin:15px 0;}
-    p{color:$block3;line-height:160%;}
-    table{border-collapse: collapse;
-      td{border: 1px solid #d5d5d5;}
+    .deitorbox{
+      h2{font-size:28px;margin:15px 0;}
+      p{color:$block3;line-height:160%;}
+      table{border-collapse: collapse;margin:0;letter-spacing:1px;line-height:200%;font-family:'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';color:$block3;
+        tr{
+          &:nth-child(even){background-color:inherit;}
+        }
+        td{border: 1px solid #d5d5d5;
+          &:first-child{background-color:#f0f0f0;font-size:24px;text-align:center;}
+        }
+      }
     }
   }
 }

@@ -15,7 +15,7 @@ $white:#ffffff;
 
 body {background-color:#f0f0f0;} 
 .news_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 -110px 0;
-  @include breakpoint (medium down) {padding:0 0 0px 0;background-size:1366px;margin:0 0 -90px 0;} //1024　↓
+  @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 -90px 0;} //1024　↓
   .newscenter{@extend %content_w;margin:0 auto 70px auto;position:relative;overflow:hidden;
     @include breakpoint (medium down) {margin:0 auto 40px auto;} //1024　↓
     @include breakpoint (small down) {margin:0 auto 20px auto;} 
@@ -48,12 +48,22 @@ body {background-color:#f0f0f0;}
     }
     &.view{
       .newsimg{width:400px;float:left;
+        @include breakpoint (medium down) {width:300px;} //1024　↓
+        @include breakpoint (small down) {float:none;margin:20px auto 0 auto;} 
         img{width:100%;}
       }
       .newstitle{width:calc(100% - 490px);position:relative;float:right;
-        .sort{color:#86b12e;border:1px solid #86b12e;border-radius:30px;padding:10px 30px;display:table;margin:90px 0 0 0;background-color:rgba(240,240,240,.4);}
+        @include breakpoint (medium down) {width:calc(100% - 330px);} //1024　↓
+        @include breakpoint (small down) {width:calc(100% - 0px);float:none;overflow:hidden;} 
+        .sort{color:#86b12e;border:1px solid #86b12e;border-radius:30px;padding:10px 30px;display:table;margin:90px 0 0 0;background-color:rgba(240,240,240,.4);
+          @include breakpoint (medium down) {margin:60px 0 0 0;} //1024　↓
+          @include breakpoint (small down) {margin:0px 0 0 0;} 
+        }
         .name{color:$block3;margin:30px 0 0 0;}
-        .line{width:100%;border-bottom:1px solid rgba(0,0,0,0.2);margin:35px 0;}
+        .line{width:100%;border-bottom:1px solid rgba(0,0,0,0.2);margin:35px 0;
+          @include breakpoint (medium down) {margin:25px 0;} //1024　↓
+          @include breakpoint (small down) {margin:10px 0;} 
+        }
         .date{
           .dateicon{color:$block6;font-size:24px;float:left;}
           .datetext{float:left;margin:0 0 0 10px;color:$block6;letter-spacing:0.5px;}
@@ -69,9 +79,21 @@ body {background-color:#f0f0f0;}
 .news_htmlbox{background-color:$white;padding:70px 0 100px 0;margin:-70px 0 -100px 0;
   @include breakpoint (xlarge down) {padding:70px 0 100px 0;} // 1440　↓
   @include breakpoint (large down) {padding:50px 0 70px 0;} //1200　↓
-  @include breakpoint (medium down) {padding:30px 0 80px 0;} //1024　↓
-  @include breakpoint (small down) {padding:20px 0 80px 0;margin:0 0 -20px 0;}
-  .newscenter{@extend %content_w;margin:0px auto 70px auto;position:relative;overflow:hidden;}
+  @include breakpoint (medium down) {padding:50px 0 80px 0;} //1024　↓
+  @include breakpoint (small down) {padding:70px 0 80px 0;margin:0 0 -20px 0;}
+  .newscenter{@extend %content_w;margin:0px auto 70px auto;position:relative;overflow:hidden;
+    .deitorbox{border-bottom:1px solid rgba(0,0,0,0.2);padding:0 0 50px 0;
+      @include breakpoint (small down) {padding:0 0 20px 0;}
+    }
+    .backlist{background-color:$green;display:flex;width:100%;max-width:200px;border-radius:30px;padding:12px 40px;margin:50px auto 0 auto;
+      @include breakpoint (small down) {margin:20px auto 0 auto;}
+      .backarrow{transform:rotate(180deg);transition:0.4s;
+        .backicon{color:#fff;}
+      }
+      .backtext{color:#fff;margin:-1px 0 0 8px;letter-spacing:0.5px;}
+      &:hover{.backarrow{transform:rotate(180deg) translateX(5px);transition:0.4s;}}
+    }
+  }
 }
 
 
