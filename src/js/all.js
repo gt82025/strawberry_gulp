@@ -165,9 +165,9 @@ if(b){
 			}
 			p = $(this).scrollTop();  
 			if(t<=scroll_top){//下滚  
-				$('header , .mo_logo').addClass('scrolling');
+				$('header , .mo_logo , .carcontent').addClass('scrolling');
 			}else{//上滚  
-				$('header , .mo_logo').removeClass('scrolling');
+				$('header , .mo_logo , .carcontent').removeClass('scrolling');
 			}  
 			setTimeout(function(){t = scroll_top;},0);      
 		});
@@ -208,27 +208,143 @@ if(b){
 			}
 		}
 		buildEaseScroll();
-		if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 5){
-		  $('.gallery-thumbs').addClass('five');
-		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 4){
-		  $('.gallery-thumbs').addClass('four');
-		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 3){
-		  $('.gallery-thumbs').addClass('three');
-		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 2){
-		  $('.gallery-thumbs').addClass('two');
-		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 1){
-		  $('.gallery-thumbs').addClass('one');
-		}else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length > 5){
-		  $('.gallery-thumbs .arrowicon').addClass('full');
-		}
+
+		
+		var swiper_project = new Swiper(".gallery-thumbs", {
+			spaceBetween: 0,
+			slidesPerView: "auto",
+			centeredSlides: false,
+			touchRatio: 0.2,
+			on: {   
+			},
+			breakpoints: {
+			  480: {
+				//- slidesPerView: 2,
+				loop: false ,
+				// slidesOffsetBefore : 30,
+				// slidesOffsetAfter : 30,
+			  },
+			  960: {
+				//- slidesPerView: 3,
+				loop: false, //循環撥放
+				// slidesOffsetBefore : 30,
+				// slidesOffsetAfter : 30,
+			  },
+			  5000: {
+				loop: false, //循環撥放
+			  }
+			},
+			navigation: {
+			  nextEl: ".be-icon-next",
+			  prevEl: ".be-icon-prev"
+			}
+		});
+		// if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 5){
+		//   $('.gallery-thumbs').addClass('five');
+		// }else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 4){
+		//   $('.gallery-thumbs').addClass('four');
+		// }else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 3){
+		//   $('.gallery-thumbs').addClass('three');
+		// }else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 2){
+		//   $('.gallery-thumbs').addClass('two');
+		// }else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length == 1){
+		//   $('.gallery-thumbs').addClass('one');
+		// }else if($('.gallery-thumbs .swiper-wrapper .swiper-slide').length > 5){
+		//   $('.gallery-thumbs .arrowicon').addClass('full');
+		// }
+		
 		var windows_w = $(window).width();
-		var gallery_w = $('.gallery-thumbs').width();
-		console.log(windows_w);
-		console.log(gallery_w);
+		var gallery_w = 0; 
+
+		if(windows_w <= 1024){
+			$('.gallery-thumbs .swiper-wrapper .swiper-slide').each(function(index) { 
+				gallery_w += ( $(this).width() + 30 );
+			}); 
+		}else if(windows_w <= 960){
+			$('.gallery-thumbs .swiper-wrapper .swiper-slide').each(function(index) { 
+				gallery_w += ( $(this).width() + 30 );
+			}); 
+		}else{
+			$('.gallery-thumbs .swiper-wrapper .swiper-slide').each(function(index) { 
+				gallery_w += ( $(this).width() + 0 );
+			}); 
+		}
+
+		$('.gallery-thumbs').width(gallery_w);
 		if(windows_w <= gallery_w){
 		  $('.gallery-thumbs').addClass('full');
 		  $('.gallery-thumbs .arrowicon').addClass('full');
+		  $('.gallery-thumbs').width(windows_w);
+		  var swiper_project = new Swiper(".gallery-thumbs", {
+			  spaceBetween: 0,
+			  slidesPerView: "auto",
+			  centeredSlides: false,
+			  touchRatio: 0.2,
+			  on: {   
+			  },
+			  breakpoints: {
+				480: {
+				  //- slidesPerView: 2,
+				  loop: false ,
+				  slidesOffsetBefore : 30,
+				  slidesOffsetAfter : 30,
+				},
+				960: {
+				  //- slidesPerView: 3,
+				  loop: false, //循環撥放
+				  slidesOffsetBefore : 30,
+				  slidesOffsetAfter : 30,
+				},
+				5000: {
+				  loop: false, //循環撥放
+				}
+			  },
+			  navigation: {
+				nextEl: ".be-icon-next",
+				prevEl: ".be-icon-prev"
+			  }
+		  });
+		}else{
+			
 		}
+
+		
+		//推薦商品
+		var recommend_slider = new Swiper('.productcenter .swiper-container.recommend_slider', {
+			speed: 1200,
+			autoplay: false,
+			slidesPerView: 'auto',
+			centeredSlides: false,
+			loop: true, //循環撥放
+			spaceBetween: 0,
+			slidesPerView : 3,
+			slidesPerGroup: 1,
+			autoHeight: true,
+			watchOverflow: true,
+			simulateTouch: true,
+			effect: "slide", //Could be "slide", "fade", "cube", "coverflow" or "flip"
+			navigation: {
+			nextEl: '.reco_nextarrow',
+			prevEl: '.reco_prevarrow',
+			},
+			breakpoints: {
+			640: {
+				slidesPerView: 1,
+				offsetPxAfter: 50,
+				loop: false
+			},
+			960: {
+				slidesPerView: 2,
+				loop: true, //循環撥放
+			},
+			1920: {
+				slidesPerView: 3
+			},
+			5000: {
+				slidesPerView: 3
+			}
+			}
+		});
 
 	});
 	// end doc ready

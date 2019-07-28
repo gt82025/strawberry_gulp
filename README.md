@@ -22,7 +22,7 @@
 (參考iconfont生成後的html，請在網址列後加入/fonts/icons/)
 範例：http://localhost:3000/fonts/icons/
 ```diff
-// Gulp.js 2019/02修正列表
+// Gulp.js 2019/07修正列表
 // Node version v10.15.1
 // NPM version V6.4.1
 // Gulp version v3.9.1
@@ -46,7 +46,7 @@
 7.重新架構新版本foundation framwork , bootstrap framwork
 +	框架版本更新至官方最新版本
 8.PUG支援
-+	支援哈巴狗了ಠ_ಠ
++	支援pug
 // -------------------------
 // 問題列表
 - 1.windows環境下，pngquant圖片壓縮會有 libpng 未下載錯誤訊息，並無法壓縮png檔案
@@ -56,6 +56,8 @@
 
 ### 使用外掛列表 ###
 >請將有使用的外掛套件撰寫於此
+* jquery.easeScroll
+* swiper
 
 ### 注意事項 ###
 
@@ -88,17 +90,13 @@
 * JS檔案已兼容 ES6 以及 ES5 可在檔案內撰寫，Gulp編譯後會自動產生 ES5 語法
 
 
-### 海棠相關文件 ###
+### 相關文件 ###
 
 ##### 設計部 #####
-* 內部切版進度：（網址連結）
+* 設計圖稿zeplin：https://app.zeplin.io/project/5d08f90bfb4db76d541ed1db/dashboar
+* 內部切版進度：https://docs.google.com/spreadsheets/d/178fD_TJHPMK6RwByHVA5mpuTp2vIxGcxjXxHGjW3j68/edit#gid=59263724
 （此為範例網站，請首次切整體Layout的前端工程師，更換正確連結）
 以上進度請開放權限給「老大、莉莉安、Evonne、設計主管、PM主管、該專案PM」
 
-##### PM提供 #####
-* 詳細需要知道進度請PM提供，（網址連結）
-（此為範例網站，請專案PM提供正確連結）
 
 ##### 其他 #####
-1. 線上編輯ReadMe.md檔案顯示：https://jbt.github.io/markdown-editor/
-2. 線上編輯ReadMe.md檔案顯示：https://dillinger.io/

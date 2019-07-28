@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@import 'foundation/foundation';
+@import "layout/function";
+// --------------------------------------------------------
+/* Container Style*/
+// --------------------------------------------------------
+$green:#2b963d;
+$yellow:#2b963d;
+$block3:#3d3d3d;
+$block4:#4a4a4a;
+$block6:#666666;
+$rad:#c43632;
+$white:#ffffff;
+
+
+body {background-color:#f0f0f0;} 
+.order_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 0px 0;
+  @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 -90px 0;} //1024　↓
+  &.click{position:absolute;height:0;overflow:hidden;padding:0;}
+  .ordercenter{@extend %content_w;margin:0 auto 70px auto;position:relative;overflow:hidden;
+    @include breakpoint (medium down) {margin:0 auto 40px auto;} //1024　↓
+    @include breakpoint (small down) {margin:0 auto 20px auto;} 
+    .member_pagename{color:$green;text-align:center;}
+    .member_pagetext{color:$block6;text-align:center;margin:0 0 25px 0;}
+    .member_center{background-color:$white;padding:40px 70px;
+      @include breakpoint (medium down) {padding:15px 15px;} //1024　↓
+      .tabletitle{color:$block3;margin:0 0 15px 0;}
+      .tablebox{display:flex;border:1px solid #e5e5e5;cursor:pointer;
+        @include breakpoint (medium down) {display:block;border:1px solid $block6;margin:0 0 15px 0;} //1024　↓
+        &:nth-child(even){background-color:#e5e5e5;}
+        &:nth-child(odd){background-color:#f0f0f0;}
+        &.title{background-color:$block3;
+          @include breakpoint (medium down) {display:none;} //1024　↓
+          h6{color:$white;
+            &.pay{color:$white;}}
+        }
+        h6{text-align:center;border-left:1px solid $white;color:$block6;padding:12px 0;overflow:hidden;
+          @include breakpoint (medium down) {text-align:left;padding:0px 0;border-left:none;display:flex;} //1024　↓
+          &:first-child{border:none;
+            @include breakpoint (medium down) {border-left:none;} //1024　↓
+            span{
+              @include breakpoint (medium down) {border-top:none;} //1024　↓
+            }
+          }
+          &.number{width:calc((100% - 135px * 3) / 2);
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.much{width:135px;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.date{width:calc((100% - 135px * 3) / 2);
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.pay{width:135px;color:#2b963d;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.status{width:135px;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          span{
+            @include breakpoint (medium down) {width:calc(100% - 100px);float:left;padding:10px;border-top:1px solid $block6;} //1024　↓
+            &.motitle{display:none;width:100px;border-right:1px solid $block6;text-align:center;background-color:$block3;color:$white;
+              @include breakpoint (medium down) {display:block;} //1024　↓
+            }
+          }
+        }
+        &.unpay{background-color:$white;
+          h6{
+            &.pay{color:#c43632;}
+          }
+        }
+      }
+      &.reservation{.tablebox{display:flex;border:1px solid #e5e5e5;
+        @include breakpoint (medium down) {display:block;border:1px solid $block6;margin:0 0 15px 0;} //1024　↓
+        &:nth-child(even){background-color:#e5e5e5;}
+        &:nth-child(odd){background-color:#f0f0f0;}
+        &.title{background-color:$block3;
+          @include breakpoint (medium down) {display:none;} //1024　↓
+          h6{color:$white;
+            &.status{color:$white;}}
+        }
+        h6{text-align:center;border-left:1px solid $white;color:$block6;padding:12px 0;overflow:hidden;
+          @include breakpoint (medium down) {text-align:left;padding:0px 0;border-left:none;display:flex;} //1024　↓
+          &:first-child{border:none;
+            @include breakpoint (medium down) {border-left:none;} //1024　↓
+            span{
+              @include breakpoint (medium down) {border-top:none;} //1024　↓
+            }
+          }
+          &.date{width:calc((100% - 135px * 3) / 2);
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.site{width:135px;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+            a{cursor:pointer;color:$block6;
+              @include breakpoint (medium down) {width:100%;display:flex;} //1024　↓
+              span{
+                .pinicon{color:$block6;transition:0.4s;}
+              }
+              &:hover{
+                span{
+                  .pinicon{color:$green;transition:0.4s;}
+                }
+              }
+            }
+          }
+          &.session{width:calc((100% - 135px * 3) / 2);
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.number{width:135px;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          &.status{width:135px;color:#2b963d;
+            @include breakpoint (medium down) {width:100%;} //1024　↓
+          }
+          span{
+            @include breakpoint (medium down) {width:calc(100% - 100px);float:left;padding:10px;border-top:1px solid $block6;} //1024　↓
+            &.motitle{display:none;width:100px;border-right:1px solid $block6;text-align:center;background-color:$block3;color:$white;
+              @include breakpoint (medium down) {display:block;} //1024　↓
+            }
+          }
+        }
+        &.unpay{background-color:$white;
+          h6{
+            &.status{color:#c43632;}
+          }
+        }
+        &.expired{
+          h6{
+            &.status{color:$block6;}
+          }
+        }
+      }
+      }
+    }
+  }
+}
+
+
+
+// --------------------------------------------------------
+/* Animate Style*/
+// --------------------------------------------------------
+@keyframes bg{
+ 0%{}
+ 100%{}
+}

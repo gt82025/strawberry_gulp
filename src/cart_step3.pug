@@ -1,0 +1,198 @@
+extends _layout
+block page_title
+  title 商品列表
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+      jQuery('.quantity').each(function() {
+        var spinner = jQuery(this),
+          input = spinner.find('input[type="number"]'),
+          btnUp = spinner.find('.quantity-up'),
+          btnDown = spinner.find('.quantity-down'),
+          min = input.attr('min'),
+          max = input.attr('max');
+
+        btnUp.click(function() {
+          var oldValue = parseFloat(input.val());
+          if (oldValue >= max) {
+            var newVal = oldValue;
+          } else {
+            var newVal = oldValue + 1;
+          }
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
+
+        btnDown.click(function() {
+          var oldValue = parseFloat(input.val());
+          if (oldValue <= min) {
+            var newVal = oldValue;
+          } else {
+            var newVal = oldValue - 1;
+          }
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
+      });
+    });
+block content
+              
+  section.projecttop
+  section.cart_content
+    .cartcenter
+      h2.member_pagename 訂購資料
+      h5.member_pagetext 請確認付款、訂購及收件人資訊!!
+
+      .typeposition
+        .typebox.typehere 
+          i.typeicon.be-icon.be-icon-cartstep1
+        .typebox.typehere 
+          i.typeicon.be-icon.be-icon-cartstep2
+        .typebox.typehere 
+          i.typeicon.be-icon.be-icon-cartstep3
+        .typebox
+          i.typeicon.be-icon.be-icon-cartstep4
+
+      .member_center
+        .tablebox.title
+          .tablearticle.content
+            h6 內容
+          .tablearticle.price
+            h6 單價
+          .tablearticle.quantity
+            h6 數量
+          .tablearticle.amount
+            h6 小計
+        .tablebox
+          .tablearticle.content
+            h6.mo_title 內容
+            .tablbox
+              img.propic(src="images/index/proimg1.jpg", alt="")
+              .propic_text
+                h3.pro_name 小果草莓
+                h4 ( 2盒裝 ) 20顆/盒
+          .tablearticle.price
+            h6.mo_title 單價
+            .tablbox
+              h6 599
+          .tablearticle.quantity
+            h6.mo_title 數量
+            .tablbox
+              h6 1
+          .tablearticle.amount
+            h6.mo_title 小計
+            .tablbox
+              h6 599
+        .tablebox.auto
+          .end_pricetext 
+            h6 合計
+          .tablearticle.amount
+            h6 599
+        .tablebox.auto
+          .end_pricetext 
+            label.radiobox
+              h6 自取
+          .tablearticle.amount
+            h6 0
+        .tablebox.totlepay
+          .end_pricetext 
+            h6 總計
+          .tablearticle.amount
+            h6 599
+        .salebar.type2
+          h6.saletext 付款方式
+          .salebox 
+            label.radiobox
+              h6 線上刷卡
+        .guestarea
+          h2.guesttitle 訂購人資料
+          .guest_msg
+            h6.msgtitle 信箱 E-mail
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 姓名 Your Name
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 性別 Gender
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 男性
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 女性
+          .guest_msg
+            h6.msgtitle 手機號碼 Mobile
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 地址 Address
+            .textbox.three
+              input(type="text").msgtext
+              select(name="").msgtext
+                option(value="") 鄉鎮區
+                option(value="") 區1
+              select(name="").msgtext
+                option(value="") 郵遞區
+                option(value="") 001
+          .guest_msg.helf.right
+            h6.msgtitle 
+            input(type="text").msgtext
+        .guestarea
+          h2.guesttitle 收件人資料
+            label.container
+              input(type="checkbox" checked="checked")
+              span.checkmark
+              span.marktext 同訂購人
+          .guest_msg
+            h6.msgtitle 信箱 E-mail
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 姓名 Your Name
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 性別 Gender
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 男性
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 女性
+          .guest_msg
+            h6.msgtitle 手機號碼 Mobile
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 地址 Address
+            .textbox.three
+              input(type="text").msgtext
+              select(name="").msgtext
+                option(value="") 鄉鎮區
+                option(value="") 區1
+              select(name="").msgtext
+                option(value="") 郵遞區
+                option(value="") 001
+          .guest_msg.helf.right
+            h6.msgtitle 
+            input(type="text").msgtext
+        .salebar.type2
+          h6.saletext 收件/取貨
+          .salebox 
+            label.radiobox
+              h6 不指定
+        .guestarea.textarea
+          .guest_msg
+            h6.msgtitle 備註 Notice
+            textarea(name="", cols="30", rows="10").msgtext
+        .cart_buttonbox
+          a(href="cart_step2.html").linkbutton
+            i.buttonicon.be-icon.be-icon-buttonarrow
+            p 上一步
+          a(href="cart_step4.html").linkbutton
+            p 下一步
+            i.buttonicon.be-icon.be-icon-buttonarrow
+     
+
+
+    
