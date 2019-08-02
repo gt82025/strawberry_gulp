@@ -1,6 +1,6 @@
 extends _layout
 block page_title
-  title 商品列表
+  title 文章列表
 block style
   link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
   link(type="text/css" , rel="stylesheet", href="css/news.min.css")
@@ -23,7 +23,8 @@ block content
         //照片尺寸為w500px x h600px
         .newsimg
           img(src="images/index/proimg1.jpg", alt="")
-          .addicon
+          .coverbox
+          i.addicon.be-icon.be-icon-hovericon
         h6.sortname=sortname
         h6.newstext 草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！
         h6.newstime 2019-07-01
@@ -33,7 +34,7 @@ block content
         .swiper-wrapper
           // 標籤分類文字不超過六個字
           a(href="news_list.html").swiper-slide: p 消息總攬
-          a(href="news_list.html").swiper-slide: p 草果新訊
+          a(href="news_list.html").swiper-slide: p 草菓新訊
           a(href="news_list.html").swiper-slide: p 媒體報導
         i.arrowicon.be-icon.be-icon-prev
         i.arrowicon.be-icon.be-icon-next

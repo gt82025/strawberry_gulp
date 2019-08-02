@@ -14,8 +14,8 @@ $white:#ffffff;
 
 
 body {background-color:#f0f0f0;} 
-.cart_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 0px 0;
-  @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 0px 0;} //1024　↓
+.cart_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 150px 0;
+  @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 60px 0;} //1024　↓
   &.nonebg{background-image:none;display:none;
     &.click{display:block;}
   }
@@ -111,8 +111,8 @@ body {background-color:#f0f0f0;}
             &.amount{h6{margin:0px 0 0 0;}}
           }
         }
-        .tablearticle{padding:20px 35px;text-align:center;display:flex;
-          @include breakpoint (medium down) {padding:0;border-bottom:1px solid #dcdcdc;overflow:hidden;} //1024　↓
+        .tablearticle{padding:20px 35px;text-align:center;
+          @include breakpoint (medium down) {padding:0;border-bottom:1px solid #dcdcdc;overflow:hidden;display:flex;} //1024　↓
           &.content{width:calc(100% - 120px - 120px - 150px);text-align:left;
             @include breakpoint (medium down) {width:100%;} //1024　↓
             .tablbox{display:flex;}
@@ -396,7 +396,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none !important;
     margin: 0;
 }
-.recommend_pro{background-image: linear-gradient(to bottom, #fafafa, #e7e7e7);padding:70px 0 100px 0;margin:0 0 -100px 0;
+.recommend_pro{background-image: linear-gradient(to bottom, #fafafa, #e7e7e7);padding:70px 0 150px 0;margin:0 0 -100px 0;
   @include breakpoint (xlarge down) {padding:70px 0 100px 0;} // 1440　↓
   @include breakpoint (large down) {padding:50px 0 70px 0;} //1200　↓
   @include breakpoint (medium down) {padding:30px 0 80px 0;} //1024　↓
@@ -417,9 +417,13 @@ input::-webkit-inner-spin-button {
                 img{width:100%;}
               }
               .coverbox{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0;transition:0.4s;background-color:rgba(0,0,0,0.6);}
+              .addicon{position:absolute;width:50px;height:50px;left:calc(50% - 25px);top:calc(50% - 25px);z-index:9;opacity:0;transition:0.4s;font-size:50px;color:#86b12e;
+                &::before{margin:0;}
+              }
               img{width:100%;transition:0.4s;position:relative;z-index:8;}
               &:hover{
                 .coverbox{opacity:1;transition:0.4s;}
+                .addicon{opacity:1;transition:0.4s;}
                 img{-webkit-filter:brightness(.5);transition:0.4s;
                   @include breakpoint (medium down) {-webkit-filter:brightness(1);} 
                 }

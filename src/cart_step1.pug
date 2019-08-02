@@ -1,6 +1,6 @@
 extends _layout
 block page_title
-  title 商品列表
+  title 購物車
 block style
   link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
   link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
@@ -46,6 +46,7 @@ block content
         a(href="product_view.html").proimg
           .saleicon: img(src="images/sale.png", alt="")
           .coverbox
+          i.addicon.be-icon.be-icon-hovericon
           img(src=img, alt="")
         .pro_article
           h2.pro_name=prename

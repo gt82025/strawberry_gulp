@@ -41,7 +41,8 @@ block content
         //照片尺寸為w500px x h600px
         .newsimg
           img(src="images/index/proimg1.jpg", alt="")
-          .addicon
+          .coverbox
+          i.addicon.be-icon.be-icon-hovericon
         h6.sortname=sortname
         h6.newstext 草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！草菓農場幸運大轉盤 好康歡樂送！幸運輪盤轉轉樂！
         h6.newstime 2019-07-01
@@ -129,8 +130,8 @@ block content
           .moreicon.be-icon.be-icon-buttonarrow
           h6.moretext 了解更多  Learn More
         .sort
-          a.sorttab(data-news="news1").click: p.tabname 促銷商品
-          a.sorttab(data-news="news2"): p.tabname 新鮮水果
+          a(href="news_list.html").sorttab(data-news="news1").click: p.tabname 促銷商品
+          a(href="news_list.html").sorttab(data-news="news2"): p.tabname 新鮮水果
       .newsslider.news_slider1(data-news="news1").click
         .swiper-container.news_slider
           .swiper-wrapper

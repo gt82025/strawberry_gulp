@@ -179,7 +179,8 @@ h6 {font-size:16px; @include breakpoint (large down) {font-size:14px;} }
 	.intername{color:#fff;padding:14px 12px;letter-spacing:0.5px;}
 }
 header{position:fixed;top:0;left:0;width:100%;background-color:rgba(255,255,255,1);z-index:999;transition:0.4s;
-	min-height:50px;
+	min-height:60px;box-shadow:0 0 10px 0px rgba(0,0,0,0.3);
+	@include breakpoint (medium down) {box-shadow:0 0 0px 0px rgba(0,0,0,0);}
 	.headerbar{width:100%;position:relative;z-index:9;
 		.headercenter{width:calc(150px * 5);margin:0 auto;padding:0px 0;overflow:hidden;
 			@include breakpoint (medium down) {display:none;}
@@ -203,7 +204,7 @@ header{position:fixed;top:0;left:0;width:100%;background-color:rgba(255,255,255,
 			}
 		}
 	}
-	&.top{background-color:rgba(255,255,255,1);transition:0.4s;
+	&.top{background-color:rgba(255,255,255,1);transition:0.4s;box-shadow:none;
 		.headerbar{
 			.headercenter{
 				.pagelink{color:#666;
@@ -250,6 +251,33 @@ header{position:fixed;top:0;left:0;width:100%;background-color:rgba(255,255,255,
 	&.scrolling{top:-100%;transition:0.4s;}
 }
 
+.loader{
+	width: 100vw;
+	height: 100vh;
+	background: #ffffff;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999999;
+	@include breakpoint(small only){
+		background-size: 150px;
+	}
+	.loader-img{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	&.loaded{
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: transform 1s 0.8s, opacity 1s 0.8s;
+		.loader-img{
+			transform: translate(-50%, -50%) scale(1.5);
+			transition: transform 1s;
+		}
+	}
+}
 footer{margin:100px 0 0 0;position:relative;z-index:99;
 	@include breakpoint (small down) {margin:20px 0 0 0;}
 	.footer_contact{background-image:url(../images/contact_bg.jpg);background-attachment:fixed;background-position:center center;background-size:cover;padding:0px 0 0 0;
@@ -474,7 +502,7 @@ footer{margin:100px 0 0 0;position:relative;z-index:99;
 			@include breakpoint (medium down) {position:relative;height:initial;right:initial;top:initial;margin:60px 0 0 10px;}
 			.pagelink{display:block;width:calc(100% / 4);float:left;position:relative;
 				@include breakpoint (medium down) {width:calc(100% / 1);}
-				h5{line-height:100%;color:#fff;padding:0 0 0 30px;transition:0.4s;
+				h5{line-height:100%;color:#fff;padding:0 0 0 28px;transition:0.4s;
 					@include breakpoint (medium down) {padding:0 0 0 15px;}
 				}
 				&::after{content:"";position:absolute;width:30px;height:6px;border-radius:10px;opacity:0;bottom:calc(50% - 3px);left:0;
