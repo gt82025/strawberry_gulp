@@ -442,7 +442,9 @@ footer{margin:100px 0 0 0;position:relative;z-index:99;
   } //1024-
 }
 .menu{width:100vw;height:100vh;min-height:600px;position:fixed;top:0;z-index:9999;
-	&.menulogo,&.menupage{width:calc(100% / 2);height:100%;transition:0.8s;
+	&.menulogo{width:calc(100% / 3);height:100%;transition:0.8s;
+	}
+	&.menupage{width:calc((100% / 3) * 2);height:100%;transition:0.8s;
 	}
 	&.menulogo{left:-100%;background-color:#fff;
 		@include breakpoint (xlarge down) {width:500px;} // 1440　↓
