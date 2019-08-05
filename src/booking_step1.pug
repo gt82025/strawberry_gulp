@@ -1,0 +1,109 @@
+extends _layout
+block page_title
+  title 預約採果
+block style
+  link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
+  link(type="text/css" , rel="stylesheet" , href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.3.0/themes/material_green.css")
+block script
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.3.0/flatpickr.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+
+      $(".resetDate").flatpickr({
+          wrap: true,
+          weekNumbers: true
+      });
+      flatpickr("#datetime", {enableTime: false,altInput:true});
+
+      
+      jQuery('.quantity').each(function() {
+        var spinner = jQuery(this),
+          input = spinner.find('input.number[type="number"]'),
+          btnUp = spinner.find('.quantity-up'),
+          btnDown = spinner.find('.quantity-down'),
+          min = input.attr('min'),
+          max = input.attr('max');
+
+        btnUp.click(function() {
+          var oldValue = parseFloat(input.val());
+          if (oldValue >= max) {
+            var newVal = oldValue;
+          } else {
+            var newVal = oldValue + 1;
+          }
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
+
+        btnDown.click(function() {
+          var oldValue = parseFloat(input.val());
+          if (oldValue <= min) {
+            var newVal = oldValue;
+          } else {
+            var newVal = oldValue - 1;
+          }
+          spinner.find("input").val(newVal);
+          spinner.find("input").trigger("change");
+        });
+      });
+    });
+block content
+              
+  section.projecttop.book
+  section.cart_content
+    .cartcenter
+      h2.member_pagename 預約採果
+      h5.member_pagetext 請填寫預約相關資料!!
+      .member_center.marbton
+        .bookingarea
+          .bi_box
+            i.bi_icon.be-icon.be-icon-pin
+            select
+              option(value="") 請選擇農場
+              option(value="") 草菓農場1
+              option(value="") 草菓農場2
+              option(value="") 草菓農場3
+          .bi_box.resetDate(id="basicDate")
+            i.bi_icon.be-icon.be-icon-booking
+            from
+              input(type="text" placeholder="請選擇日期" data-input id="datetime" name="datetime")
+          .bi_box
+            i.bi_icon.be-icon.be-icon-clock
+            select
+              option(value="") 上午場 (AM09:00~PM12:00)
+              option(value="") 下午場 (AM09:00~PM12:00)
+
+      .member_center
+        .guestarea
+          h2.guesttitle.book 預約資料
+          .guest_msg.helf
+            h6.msgtitle 信箱 E-mail
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 姓名 Your Name
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 手機號碼 Mobile
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 預約人數 Numbers
+            .msgbuttonbox.quantity
+              button.sub-btn.quantity-down: span －
+              button.add-btn.quantity-up: span ＋ 
+              input.number(type="number",value="1",min="0")
+            
+        .guestarea.textarea
+          .guest_msg
+            h6.msgtitle 備註 Notice
+            textarea(name="", cols="30", rows="10").msgtext
+        .cart_buttonbox
+          a(href="").linkbutton
+            i.buttonicon.be-icon.be-icon-closeicon
+            p 取消重填
+          a(href="booking_step2.html").linkbutton
+            p 確定送出
+            i.buttonicon.be-icon.be-icon-cartstep4
+     
+
+
+    

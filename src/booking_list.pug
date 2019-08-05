@@ -4,6 +4,7 @@ block page_title
 block style
   link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
   link(type="text/css" , rel="stylesheet", href="css/order.min.css")
+  link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
 block script
   script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
   script(type="text/javascript").
@@ -14,6 +15,15 @@ block script
         pagelinksh_width += ( $(this).width() + 2 + 10 );
       });
       $('.pageLinks').width(pagelinksh_width);
+      //- tablebox
+      $(document).on('click', '.tablebox', function() {
+        $('.order_content').addClass('click');
+        $('.cart_content.nonebg').addClass('click');
+      });
+      $(document).on('click', '.closebutton , .topclosebutton', function() {
+        $('.order_content').removeClass('click');
+        $('.cart_content.nonebg').removeClass('click');
+      });
     });
 block content
   mixin news_slider (sortname)
@@ -62,7 +72,7 @@ block content
       h2.member_pagename 嗨，Jack Hsieh
       h5.member_pagetext 歡迎您的蒞臨!!
       .member_center.reservation
-        h3.tabletitle 訂單紀錄
+        h3.tabletitle 預約紀錄
         .tablebox.title 
           h6.date 預約日期
           h6.site 場地
@@ -93,3 +103,43 @@ block content
         a(href="") 10
         span.next <a href="">></a>	
     
+    
+  section.cart_content.nonebg
+    .cartcenter
+      .member_center
+        .guestarea
+          h3.guesttitle.number 
+            i.titleicon.be-icon.be-icon-booking
+            | 採果日期：2019-07-30
+          i.topclosebutton.be-icon.be-icon-closeicon
+          .guest_msg.helf
+            h6.msgtitle 採果地點 Address
+            p.msgword 
+              i.wordicon.be-icon.be-icon-pin
+              | 草菓農場
+              a(href="").map Google Map
+          .guest_msg.helf.right
+            h6.msgtitle 採果場次 Time
+            p.msgword 
+              i.wordicon.be-icon.be-icon-clock
+              | 上午場 (AM09:00~PM12:00)
+        .guestarea
+          h2.guesttitle 預約資料
+          .guest_msg.helf
+            h6.msgtitle 會員信箱 E-mail
+            p.msgword ilovejector@gmail.com
+          .guest_msg.helf.right
+            h6.msgtitle 姓名 Your Name
+            p.msgword Jector
+          .guest_msg.helf
+            h6.msgtitle 手機號碼 Mobile
+            p.msgword 0920659930
+          .guest_msg.helf.right
+            h6.msgtitle 預約人數 Numbers
+            p.msgword 20
+        .guestarea.textarea
+          .guest_msg
+            h6.msgtitle 備註 Notice
+            p.msgword 無
+        .closebutton.gotop
+          i.closeicon.be-icon.be-icon-closeicon

@@ -30,7 +30,7 @@ body {
   background-repeat: repeat-x;
   background-position: center top;
   padding: 70px 0 0 0;
-  margin: 0 0 0px 0; }
+  margin: 0 0 70px 0; }
   @media screen and (max-width: 63.99875em) {
     .order_content {
       padding: 30px 0 0px 0;
@@ -41,6 +41,13 @@ body {
     height: 0;
     overflow: hidden;
     padding: 0; }
+  .order_content.search {
+    margin: 0 0 0px 0; }
+    @media screen and (max-width: 63.99875em) {
+      .order_content.search {
+        margin: 0 0 0px 0; } }
+    .order_content.search .ordercenter {
+      margin: 0 auto 0px auto; }
   .order_content .ordercenter {
     margin: 0 auto 70px auto;
     position: relative;
@@ -269,6 +276,63 @@ body {
             color: #c43632; }
         .order_content .ordercenter .member_center.reservation .tablebox.expired h6.status {
           color: #666666; }
+      .order_content .ordercenter .member_center.marbton {
+        margin: 0 0 20px 0; }
+        @media screen and (max-width: 74.99875em) {
+          .order_content .ordercenter .member_center.marbton {
+            padding: 15px 15px 15px 15px; } }
+      .order_content .ordercenter .member_center .guest_search .msgtitle {
+        width: 100%;
+        min-height: 21px;
+        font-size: 14px;
+        margin: 0 0 8px 0;
+        color: #666666; }
+        @media screen and (max-width: 63.99875em) {
+          .order_content .ordercenter .member_center .guest_search .msgtitle {
+            min-height: initial; } }
+      .order_content .ordercenter .member_center .guest_search .searchbox {
+        overflow: hidden; }
+        .order_content .ordercenter .member_center .guest_search .searchbox input {
+          float: left;
+          height: 45px; }
+          .order_content .ordercenter .member_center .guest_search .searchbox input.searchtext {
+            width: calc(100% - 230px); }
+          .order_content .ordercenter .member_center .guest_search .searchbox input.searchbutton {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer; }
+        .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox {
+          float: left;
+          width: 230px;
+          text-align: center;
+          height: 45px;
+          position: relative;
+          color: #ffffff;
+          background-color: #3d3d3d;
+          -webkit-transition: 0.4s;
+          transition: 0.4s; }
+          @media screen and (max-width: 63.99875em) {
+            .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox {
+              background-color: #2b963d; } }
+          .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox .searchicon {
+            color: #ffffff; }
+            .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox .searchicon::before {
+              -webkit-transform: translateY(3px);
+                      transform: translateY(3px);
+              margin-right: 10px; }
+          .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox .searchtext {
+            margin: 10px 0; }
+          .order_content .ordercenter .member_center .guest_search .searchbox .buttonbox:hover {
+            background-color: #2b963d;
+            -webkit-transition: 0.4s;
+            transition: 0.4s; }
+      .order_content .ordercenter .member_center.list {
+        display: none; }
+        .order_content .ordercenter .member_center.list.click {
+          display: block; }
 
 /* Animate Style*/
 @-webkit-keyframes bg {

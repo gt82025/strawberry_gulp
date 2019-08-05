@@ -14,9 +14,13 @@ $white:#ffffff;
 
 
 body {background-color:#f0f0f0;} 
-.order_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 0px 0;
+.order_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 70px 0;
   @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 -90px 0;} //1024　↓
   &.click{position:absolute;height:0;overflow:hidden;padding:0;}
+  &.search{margin:0 0 0px 0;
+    @include breakpoint (medium down) {margin:0 0 0px 0;} //1024　↓
+    .ordercenter{margin:0 auto 0px auto;}
+  }
   .ordercenter{@extend %content_w;margin:0 auto 70px auto;position:relative;overflow:hidden;
     @include breakpoint (medium down) {margin:0 auto 40px auto;} //1024　↓
     @include breakpoint (small down) {margin:0 auto 20px auto;} 
@@ -132,7 +136,33 @@ body {background-color:#f0f0f0;}
         }
       }
       }
+      &.marbton{margin:0 0 20px 0;
+        @include breakpoint (large down) {padding:15px 15px 15px 15px;} 
+      }
+      .guest_search{
+        .msgtitle{width:100%;min-height:21px;font-size:14px;margin:0 0 8px 0;color:$block6;
+          @include breakpoint (medium down) {min-height:initial;} //1024　↓
+        }
+        .searchbox{overflow:hidden;
+          input{float:left;height:45px;
+            &.searchtext{width:calc(100% - 230px);}
+            &.searchbutton{width:100%;position:absolute;top:0;left:0;opacity:0;cursor:pointer;}
+          }
+          .buttonbox{float:left;width:230px;text-align:center;height:45px;position:relative;color:$white;background-color:$block3;transition:0.4s;
+            @include breakpoint (medium down) {background-color:$green;} //1024　↓
+            .searchicon{color:$white;
+              &::before{transform:translateY(3px);margin-right:10px;}
+            }
+            .searchtext{margin:10px 0;}
+            &:hover{background-color:$green;transition:0.4s;}
+          }
+        }
+      }
+      &.list{display:none;
+        &.click{display:block;}
+      }
     }
+    
   }
 }
 

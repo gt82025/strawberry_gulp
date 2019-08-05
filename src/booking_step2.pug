@@ -1,0 +1,52 @@
+extends _layout
+block page_title
+  title 預約採果
+block style
+  link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
+block script
+  script(type="text/javascript").
+    $(document).ready(function () {
+    });
+block content
+              
+  section.projecttop
+  section.cart_content.small
+    .cartcenter
+      h2.member_pagename 預約成功
+      h5.member_pagetext 感謝您的預約!!
+      .member_center
+        .guestarea.noline
+          h5.numberingtext 以下為您預約採果之相關資訊，更多詳情請於會員中心/預約記錄中查看：
+          h2.numbering 
+        .guestarea
+          .guest_msg.map
+            p.msgword
+              i.wordicon.be-icon.be-icon-pin
+              | 草菓農場
+            a(href="").map Google Map
+          .guest_msg
+            p.msgword 
+              i.wordicon.be-icon.be-icon-booking
+              | 23.07.2019
+          .guest_msg
+            p.msgword 
+              i.wordicon.be-icon.be-icon-clock
+              | 上午場 (AM09:00~PM12:00)
+          .guest_msg
+            p.msgword 
+              i.wordicon.be-icon.be-icon-preson
+              | 10 人
+          
+          .cart_buttonbox.type4
+            a(href="booking_list.html").only
+              P
+                i.buttonicon.be-icon.be-icon-booking
+                | 預約紀錄
+        .guestarea.noline
+          .qrbox
+            .qrimg: img(src="images/qrcode.png", alt="")
+            h2.qrid Line@ : fs_farm
+          h6.guestsubtitle.no_border.center 請掃描QR-Code，或是透過ID加入<br>好友喔，謝謝!!
+
+
+    

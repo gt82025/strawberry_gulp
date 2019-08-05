@@ -1,0 +1,204 @@
+extends _layout
+block page_title
+  title 訂單紀錄
+block style
+  link(type="text/css" , rel="stylesheet", href="css/order.min.css")
+  link(type="text/css" , rel="stylesheet", href="css/cart.min.css")
+block script
+  script(type="text/javascript").
+    $(document).ready(function () {
+      //- tablebox
+      $(document).on('click', '.buttonbox', function() {
+        $('.order_content .member_center.list').addClass('click');
+        $('.cart_content.nonebg').removeClass('click');
+      });
+      $(document).on('click', '.tablebox', function() {
+        $('.order_content .member_center.list').removeClass('click');
+        $('.cart_content.nonebg').addClass('click');
+      });
+      $(document).on('click', '.closebutton , .topclosebutton', function() {
+        $('.order_content .member_center.list').addClass('click');
+        $('.cart_content.nonebg').removeClass('click');
+      });
+    });
+block content
+  mixin tablebox (classname, paystatus)
+    .tablebox(class=classname)
+      h6.number 
+        span.motitle 訂單編號
+        span 2019-1105-00001
+      h6.much 
+        span.motitle 交易金額
+        span 1550
+      h6.date 
+        span.motitle 訂購日期
+        span 2017-05-06 am08:00:00
+      h6.pay
+        span.motitle 付款狀態
+        span=paystatus
+      h6.status 
+        span.motitle 訂單狀態
+        span 處理中
+
+  section.projecttop
+  section.order_content.search
+    .ordercenter
+      h2.member_pagename 訂單查詢
+      h5.member_pagetext 查看訂單狀態
+      .member_center.marbton
+        .guestarea
+          .guest_search
+            h6.msgtitle 訂單編號 Order List
+            .searchbox
+              input(type="text").searchtext
+              .buttonbox
+                h6.searchtext 
+                  i.searchicon.be-icon.be-icon-search
+                  | 查詢
+                input(type="submit").searchbutton
+      .member_center.list
+        .tablebox.title 
+          h6.number 訂單編號
+          h6.much 交易金額
+          h6.date 訂購日期
+          h6.pay 付款狀態
+          h6.status 訂單狀態
+        +tablebox('unpay','待付款')
+        
+
+    
+  section.cart_content.nonebg.search
+    .cartcenter
+      .member_center
+        .guestarea
+          h3.guesttitle.number 訂單編號：2019-1105-00001
+          i.topclosebutton.be-icon.be-icon-closeicon
+        .tablebox.title
+          .tablearticle.content
+            h6 內容
+          .tablearticle.price
+            h6 單價
+          .tablearticle.quantity
+            h6 數量
+          .tablearticle.amount
+            h6 小計
+        .tablebox
+          .tablearticle.content
+            h6.mo_title 內容
+            .tablbox
+              img.propic(src="images/index/proimg1.jpg", alt="")
+              .propic_text
+                h3.pro_name 小果草莓
+                h4 ( 2盒裝 ) 20顆/盒
+          .tablearticle.price
+            h6.mo_title 單價
+            .tablbox
+              h6 599
+          .tablearticle.quantity
+            h6.mo_title 數量
+            .tablbox
+              h6 1
+          .tablearticle.amount
+            h6.mo_title 小計
+            .tablbox
+              h6 599
+        .tablebox.auto
+          .end_pricetext 
+            h6 合計
+          .tablearticle.amount
+            h6 599
+        .tablebox.auto
+          .end_pricetext 
+            label.radiobox
+              h6 自取
+          .tablearticle.amount
+            h6 0
+        .tablebox.totlepay
+          .end_pricetext 
+            h6 總計
+          .tablearticle.amount
+            h6 599
+        .salebar.type2
+          h6.saletext 付款方式
+          .salebox 
+            label.radiobox
+              h6 線上刷卡
+        .guestarea
+          h2.guesttitle 訂購人資料
+          .guest_msg
+            h6.msgtitle 信箱 E-mail
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 姓名 Your Name
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 性別 Gender
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 男性
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 女性
+          .guest_msg
+            h6.msgtitle 手機號碼 Mobile
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 地址 Address
+            .textbox.three
+              input(type="text").msgtext
+              select(name="").msgtext
+                option(value="") 鄉鎮區
+                option(value="") 區1
+              select(name="").msgtext
+                option(value="") 郵遞區
+                option(value="") 001
+          .guest_msg.helf.right
+            h6.msgtitle 
+            input(type="text").msgtext
+        .guestarea
+          h2.guesttitle 收件人資料
+            label.container
+              input(type="checkbox" checked="checked")
+              span.checkmark
+              span.marktext 同訂購人
+          .guest_msg
+            h6.msgtitle 信箱 E-mail
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 姓名 Your Name
+            input(type="text").msgtext
+          .guest_msg.helf.right
+            h6.msgtitle 性別 Gender
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 男性
+            label.radiobox
+              input(type="radio",name="Gender")
+              h6 女性
+          .guest_msg
+            h6.msgtitle 手機號碼 Mobile
+            input(type="text").msgtext
+          .guest_msg.helf
+            h6.msgtitle 地址 Address
+            .textbox.three
+              input(type="text").msgtext
+              select(name="").msgtext
+                option(value="") 鄉鎮區
+                option(value="") 區1
+              select(name="").msgtext
+                option(value="") 郵遞區
+                option(value="") 001
+          .guest_msg.helf.right
+            h6.msgtitle 
+            input(type="text").msgtext
+        .salebar.type2
+          h6.saletext 收件/取貨
+          .salebox 
+            label.radiobox
+              h6 不指定
+        .guestarea.textarea
+          .guest_msg
+            h6.msgtitle 備註 Notice
+            textarea(name="", cols="30", rows="10").msgtext
+        .closebutton.gotop
+          i.closeicon.be-icon.be-icon-closeicon

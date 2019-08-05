@@ -112,7 +112,7 @@ html {background-color:#fff;}
 ::-ms-scrollbar {
   width: 0px; background-color: #e2e2e2;
 }
-p , option , span , button , span , a , input{
+p , option , span , button , span , a , input , select{
   margin:0;font-size: 1rem; font-family:'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';
   &.bold{font-weight:bold;}
   &.small{font-size:0.875rem;}
@@ -547,6 +547,10 @@ footer{margin:100px 0 0 0;position:relative;z-index:99;
 }
 // 通用綠色tab頁籤
 .projecttop{@extend %content_top;}
+.projecttop{
+	margin:0;padding:133px 0 0 0;
+	@include breakpoint (medium down) {margin:0;padding:52px 0 0 0;}
+}
 .project_tab{@extend %content_top;background-color:$green;
   .project_center{margin:0 auto;
     .swiper-container {width: 100%;}

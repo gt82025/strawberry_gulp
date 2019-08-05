@@ -130,8 +130,8 @@ block content
           .moreicon.be-icon.be-icon-buttonarrow
           h6.moretext 了解更多  Learn More
         .sort
-          a(href="news_list.html").sorttab(data-news="news1").click: p.tabname 促銷商品
-          a(href="news_list.html").sorttab(data-news="news2"): p.tabname 新鮮水果
+          a(href="news_list.html" ,data-news="news1").sorttab.click: p.tabname 促銷商品
+          a(href="news_list.html" ,data-news="news2").sorttab: p.tabname 新鮮水果
       .newsslider.news_slider1(data-news="news1").click
         .swiper-container.news_slider
           .swiper-wrapper
