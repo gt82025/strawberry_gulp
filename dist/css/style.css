@@ -5753,8 +5753,8 @@ html.is-reveal-open {
 /* Vendor Style*/
 @font-face {
   font-family: "icon";
-  src: url("../fonts/icons/icon.eot?1564927205711");
-  src: url("../fonts/icons/icon.eot?#iefix-1564927205711") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1564927205711") format("woff2"), url("../fonts/icons/icon.woff?1564927205711") format("woff"), url("../fonts/icons/icon.ttf?1564927205711") format("truetype"), url("../fonts/icons/icon.svg?1564927205711#icon") format("svg"); }
+  src: url("../fonts/icons/icon.eot?1565364206638");
+  src: url("../fonts/icons/icon.eot?#iefix-1565364206638") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1565364206638") format("woff2"), url("../fonts/icons/icon.woff?1565364206638") format("woff"), url("../fonts/icons/icon.ttf?1565364206638") format("truetype"), url("../fonts/icons/icon.svg?1565364206638#icon") format("svg"); }
 
 .be-icon:before {
   font-family: "icon";
@@ -5787,77 +5787,80 @@ html.is-reveal-open {
 .be-icon-buttonarrow:before {
   content: '\ea03'; }
 
-.be-icon-cart:before {
+.be-icon-car:before {
   content: '\ea04'; }
 
-.be-icon-cartstep1:before {
+.be-icon-cart:before {
   content: '\ea05'; }
 
-.be-icon-cartstep2:before {
+.be-icon-cartstep1:before {
   content: '\ea06'; }
 
-.be-icon-cartstep3:before {
+.be-icon-cartstep2:before {
   content: '\ea07'; }
 
-.be-icon-cartstep4:before {
+.be-icon-cartstep3:before {
   content: '\ea08'; }
 
-.be-icon-clock:before {
+.be-icon-cartstep4:before {
   content: '\ea09'; }
 
-.be-icon-closeicon:before {
+.be-icon-clock:before {
   content: '\ea0a'; }
 
-.be-icon-copy:before {
+.be-icon-closeicon:before {
   content: '\ea0b'; }
 
-.be-icon-fb:before {
+.be-icon-copy:before {
   content: '\ea0c'; }
 
-.be-icon-hovericon:before {
+.be-icon-fb:before {
   content: '\ea0d'; }
 
-.be-icon-ig:before {
+.be-icon-hovericon:before {
   content: '\ea0e'; }
 
-.be-icon-line:before {
+.be-icon-ig:before {
   content: '\ea0f'; }
 
-.be-icon-logo:before {
+.be-icon-line:before {
   content: '\ea10'; }
 
-.be-icon-mail:before {
+.be-icon-logo:before {
   content: '\ea11'; }
 
-.be-icon-next:before {
+.be-icon-mail:before {
   content: '\ea12'; }
 
-.be-icon-phone:before {
+.be-icon-next:before {
   content: '\ea13'; }
 
-.be-icon-pin:before {
+.be-icon-phone:before {
   content: '\ea14'; }
 
-.be-icon-preson:before {
+.be-icon-pin:before {
   content: '\ea15'; }
 
-.be-icon-prev:before {
+.be-icon-preson:before {
   content: '\ea16'; }
 
-.be-icon-random:before {
+.be-icon-prev:before {
   content: '\ea17'; }
 
-.be-icon-sale:before {
+.be-icon-random:before {
   content: '\ea18'; }
 
-.be-icon-search:before {
+.be-icon-sale:before {
   content: '\ea19'; }
 
-.be-icon-shape:before {
+.be-icon-search:before {
   content: '\ea1a'; }
 
-.be-icon-top:before {
+.be-icon-shape:before {
   content: '\ea1b'; }
+
+.be-icon-top:before {
+  content: '\ea1c'; }
 
 /* Page Style*/
 footer .footer_contact .contact_center, footer .footer_contact .footerbar .barcenter, footer .footer_contact .footerbar .reserved {
@@ -5989,38 +5992,38 @@ html {
   width: 0px;
   background-color: #e2e2e2; }
 
-p, option, span, button, span, a, input, select {
+p, option, span, button, span, a, input, select, ul, li {
   margin: 0;
   font-size: 1rem;
-  font-family: 'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial'; }
-  p.bold, option.bold, span.bold, button.bold, span.bold, a.bold, input.bold, select.bold {
+  font-family: PingFangTC-Regular,'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial'; }
+  p.bold, option.bold, span.bold, button.bold, span.bold, a.bold, input.bold, select.bold, ul.bold, li.bold {
     font-weight: bold; }
-  p.small, option.small, span.small, button.small, span.small, a.small, input.small, select.small {
+  p.small, option.small, span.small, button.small, span.small, a.small, input.small, select.small, ul.small, li.small {
     font-size: 0.875rem; }
-  p.b_small, option.b_small, span.b_small, button.b_small, span.b_small, a.b_small, input.b_small, select.b_small {
+  p.b_small, option.b_small, span.b_small, button.b_small, span.b_small, a.b_small, input.b_small, select.b_small, ul.b_small, li.b_small {
     font-size: 0.9375rem; }
-  p.normal, option.normal, span.normal, button.normal, span.normal, a.normal, input.normal, select.normal {
+  p.normal, option.normal, span.normal, button.normal, span.normal, a.normal, input.normal, select.normal, ul.normal, li.normal {
     font-size: 1rem; }
-  p.middle, option.middle, span.middle, button.middle, span.middle, a.middle, input.middle, select.middle {
+  p.middle, option.middle, span.middle, button.middle, span.middle, a.middle, input.middle, select.middle, ul.middle, li.middle {
     font-size: 1.125rem; }
-  p.s_middle, option.s_middle, span.s_middle, button.s_middle, span.s_middle, a.s_middle, input.s_middle, select.s_middle {
+  p.s_middle, option.s_middle, span.s_middle, button.s_middle, span.s_middle, a.s_middle, input.s_middle, select.s_middle, ul.s_middle, li.s_middle {
     font-size: 1.25rem; }
-  p.big_middle, option.big_middle, span.big_middle, button.big_middle, span.big_middle, a.big_middle, input.big_middle, select.big_middle {
+  p.big_middle, option.big_middle, span.big_middle, button.big_middle, span.big_middle, a.big_middle, input.big_middle, select.big_middle, ul.big_middle, li.big_middle {
     font-size: 1.5rem; }
-  p.s_large, option.s_large, span.s_large, button.s_large, span.s_large, a.s_large, input.s_large, select.s_large {
+  p.s_large, option.s_large, span.s_large, button.s_large, span.s_large, a.s_large, input.s_large, select.s_large, ul.s_large, li.s_large {
     font-size: 3rem; }
-  p.large, option.large, span.large, button.large, span.large, a.large, input.large, select.large {
+  p.large, option.large, span.large, button.large, span.large, a.large, input.large, select.large, ul.large, li.large {
     font-size: 3.5rem; }
-  p.banner-txt, option.banner-txt, span.banner-txt, button.banner-txt, span.banner-txt, a.banner-txt, input.banner-txt, select.banner-txt {
+  p.banner-txt, option.banner-txt, span.banner-txt, button.banner-txt, span.banner-txt, a.banner-txt, input.banner-txt, select.banner-txt, ul.banner-txt, li.banner-txt {
     font-size: 4rem; }
-  p.en, option.en, span.en, button.en, span.en, a.en, input.en, select.en {
-    font-family: 'Arial' , 'Noto Sans TC' , sans-serif , 'Microsoft JhengHei'; }
+  p.en, option.en, span.en, button.en, span.en, a.en, input.en, select.en, ul.en, li.en {
+    font-family: PingFangTC-Regular, 'Arial' , 'Noto Sans TC' , sans-serif , 'Microsoft JhengHei'; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   letter-spacing: 1px;
   line-height: 150%;
-  font-family: 'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial'; }
+  font-family: PingFangTC-Regular,'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial'; }
   h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold {
     font-weight: bold; }
   h1.center, h2.center, h3.center, h4.center, h5.center, h6.center {
@@ -6162,7 +6165,7 @@ header {
   z-index: 999;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  min-height: 60px;
+  min-height: 50px;
   -webkit-box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.3); }
   @media screen and (max-width: 63.99875em) {

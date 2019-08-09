@@ -112,8 +112,8 @@ html {background-color:#fff;}
 ::-ms-scrollbar {
   width: 0px; background-color: #e2e2e2;
 }
-p , option , span , button , span , a , input , select{
-  margin:0;font-size: 1rem; font-family:'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';
+p , option , span , button , span , a , input , select , ul , li{
+  margin:0;font-size: 1rem;font-family:PingFangTC-Regular,'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';
   &.bold{font-weight:bold;}
   &.small{font-size:0.875rem;}
   &.b_small{font-size:0.9375rem;} 
@@ -124,9 +124,9 @@ p , option , span , button , span , a , input , select{
   &.s_large{font-size:3rem;}
   &.large{font-size:3.5rem;}
   &.banner-txt{font-size:4rem;}
-  &.en { font-family: 'Arial' , 'Noto Sans TC' , sans-serif , 'Microsoft JhengHei'; }
+  &.en { font-family:PingFangTC-Regular, 'Arial' , 'Noto Sans TC' , sans-serif , 'Microsoft JhengHei'; }
 }
-h1,h2,h3,h4,h5,h6{margin:0;letter-spacing:1px;line-height:150%;font-family:'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';
+h1,h2,h3,h4,h5,h6{margin:0;letter-spacing:1px;line-height:150%;font-family:PingFangTC-Regular,'Noto Sans TC', sans-serif ,'Microsoft JhengHei' , 'Noto Sans TC' , sans-serif , 'Arial';
 	&.bold{font-weight:bold;}
 	&.center{text-align:center;}
 }
@@ -179,7 +179,7 @@ h6 {font-size:16px; @include breakpoint (large down) {font-size:14px;} }
 	.intername{color:#fff;padding:14px 12px;letter-spacing:0.5px;}
 }
 header{position:fixed;top:0;left:0;width:100%;background-color:rgba(255,255,255,1);z-index:999;transition:0.4s;
-	min-height:60px;box-shadow:0 0 10px 0px rgba(0,0,0,0.3);
+	min-height:50px;box-shadow:0 0 10px 0px rgba(0,0,0,0.3);
 	@include breakpoint (medium down) {box-shadow:0 0 0px 0px rgba(0,0,0,0);}
 	.headerbar{width:100%;position:relative;z-index:9;
 		.headercenter{width:calc(150px * 5);margin:0 auto;padding:0px 0;overflow:hidden;

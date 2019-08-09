@@ -1,0 +1,74 @@
+extends _layout
+block page_title
+  title 常見問題
+block style
+  link(type="text/css" , rel="stylesheet", href="css/vendor/swiper/swiper.css")
+  link(type="text/css" , rel="stylesheet", href="css/service.min.css")
+block script
+  script(type="text/javascript" src="js/vendor/swiper/swiper.min.js")
+  script(type="text/javascript").
+    $(document).ready(function () {
+    });
+block content
+              
+  section.project_tab
+    .project_center
+      .swiper-container.gallery-thumbs
+        .swiper-wrapper
+          // 標籤分類文字不超過六個字
+          a.swiper-slide.active: p 如何購買
+          a(href="pay_ship.html").swiper-slide: p 付款與配送
+          a(href="pay_ship.html").swiper-slide: p 退換貨方式
+          a(href="qa.html").swiper-slide: p 常見問題
+        i.arrowicon.be-icon.be-icon-prev
+        i.arrowicon.be-icon.be-icon-next
+  section.service_content
+    .servicecenter
+      h2.member_pagename 如何購買
+      h5.member_pagetext 流程說明
+      .member_center
+        h3.centertitle 購物流程說明
+        h5.member_pagetext 草菓農場提供您簡單又安全的購物流程，親切易懂的指引，讓您充分享受便利的購物樂趣。 另外為了讓您享有更優惠的價格，建議您加入會員，即可享有銷售產品之會員價，讓您買的安心又付款輕鬆！
+        .process
+          .probox.type1
+            .tribox
+            .typenumber 01
+            i.proicon.be-icon.be-icon-cartstep1
+            p.protext 將商品加入菜籃後進行結帳流程。
+          .probox.type2
+            .tribox
+            .typenumber 02
+            i.proicon.be-icon.be-icon-cartstep2
+            p.protext 填寫訂購資料及付款方式。
+          .probox.type3
+            .tribox
+            .typenumber 03
+            i.proicon.be-icon.be-icon-cartstep3
+            p.protext 確認訂購資料是否有誤。
+        .process.last
+          .probox.type4
+            .tribox
+            .typenumber 04
+            i.proicon.be-icon.be-icon-cartstep4
+            p.protext 完成訂購。
+          .probox.type5
+            .tribox
+            .typenumber 05
+            i.proicon.be-icon.be-icon-car
+            p.protext 按照訂單順序安排出貨時程。
+          .probox(style="opacity:0;")
+        .ser_line
+        h3.centertitle 購物注意事項
+        .member_pagetext 
+          ul
+            li 非會員也可進行購物，但加入會員可享有會員價。
+            li 在刷卡或付款流程時，請務必填寫正確資料，在扣款成功後，即會導回官網，等待過程約30~50秒，請耐心等待，在等待過程中請勿關閉或切換至其他頁面。
+            li 完成訂購後，系統會自動寄發訂單清單至您的信箱，您可透過訂單編號來查詢訂單狀態。
+            li 若有任何問題都可加入我們的line@官方帳號。
+
+
+
+
+
+
+    
