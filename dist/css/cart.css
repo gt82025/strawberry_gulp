@@ -613,7 +613,7 @@ body {
               text-align: right; }
             .cart_content .cartcenter .member_center .cart_buttonbox .linkbutton:nth-of-type(1) .buttonicon {
               left: 20px;
-              right: initial;
+              right: auto;
               top: 5px;
               -webkit-transform: rotate(180deg);
                       transform: rotate(180deg); }
@@ -792,7 +792,7 @@ body {
               border: 1px solid #2b963d; }
           .cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext {
             float: left;
-            width: calc((100% - 30px) / 3);
+            width: calc((100% - 30.5px) / 3);
             margin-left: 15px; }
             .cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext:first-child {
               margin-left: 0px; }
@@ -934,7 +934,10 @@ body {
               outline: none;
               cursor: pointer;
               -webkit-transition: 0.4s;
-              transition: 0.4s; }
+              transition: 0.4s;
+              border-right: 1px solid #ffffff; }
+              .cart_content .cartcenter .member_center .guestarea .guest_msg .msgbuttonbox .sub-btn span, .cart_content .cartcenter .member_center .guestarea .guest_msg .msgbuttonbox .add-btn span {
+                font-size: 18px; }
               .cart_content .cartcenter .member_center .guestarea .guest_msg .msgbuttonbox .sub-btn:hover, .cart_content .cartcenter .member_center .guestarea .guest_msg .msgbuttonbox .add-btn:hover {
                 background: #ffffff;
                 -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -1096,7 +1099,7 @@ body {
       .cart_content .cartcenter .member_center .bookingarea {
         overflow: hidden; }
         .cart_content .cartcenter .member_center .bookingarea .bi_box {
-          width: calc((100% - 60px) / 3);
+          width: calc((100% - 60.5px) / 3);
           margin-left: 30px;
           float: left;
           position: relative;

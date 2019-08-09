@@ -157,19 +157,20 @@ if(b){
 			{
 				$('header , .menu_button , .carcontent , .mo_logo').removeClass('top');
 				$('header , .menu_button , .carcontent , .mo_logo').addClass('scroll');
+				
+				p = $(this).scrollTop();  
+				if(t<=scroll_top){//下滚  
+					$('header , .mo_logo , .carcontent').addClass('scrolling');
+				}else{//上滚  
+					$('header , .mo_logo , .carcontent').removeClass('scrolling');
+				}  
+				setTimeout(function(){t = scroll_top;},0);    
 			}
 			else if(scroll_top == 0)
 			{
 				$('header , .menu_button , .carcontent , .mo_logo').addClass('top');
 				$('header , .menu_button , .carcontent , .mo_logo').removeClass('scroll');
-			}
-			p = $(this).scrollTop();  
-			if(t<=scroll_top){//下滚  
-				$('header , .mo_logo , .carcontent').addClass('scrolling');
-			}else{//上滚  
-				$('header , .mo_logo , .carcontent').removeClass('scrolling');
 			}  
-			setTimeout(function(){t = scroll_top;},0);      
 		});
 		
 		$(document).on('click', '.menu_button', function() {

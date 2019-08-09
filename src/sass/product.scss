@@ -15,7 +15,7 @@ body {background-color:#f0f0f0;}
 .product_content{background-image:url(../images/dotbg.png);background-size:80%;background-repeat:repeat-x;background-position:center top;padding:0 0 70px 0;
   @include breakpoint (medium down) {padding:0 0 30px 0;background-size:1366px;} //1024　↓
   .productcenter{@extend %content_w;margin:0 auto;position:relative;overflow:hidden;
-    &.view{padding:90px 0;overflow:initial;display:flex;
+    &.view{padding:90px 0;overflow:visible;display:flex;
       @include breakpoint (xlarge down) {min-height:800px;padding:70px 0;} // 1440　↓
       @include breakpoint (large down) {min-height:700px;padding:50px 0;} //1200　↓
       @include breakpoint (medium down) {display:block;min-height:600px;padding:30px 0;} //1024　↓
@@ -38,7 +38,7 @@ body {background-color:#f0f0f0;}
           @include breakpoint (medium down) {width:30px;height:30px;} //1024　↓
           img{width:100%;}
         }
-        .coverbox{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0;transition:0.4s;background-color:rgba(0,0,0,0.6);}
+        .coverbox{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0;transition:0.4s;background-color:rgba(0,0,0,0.6);z-index:9;}
         .addicon{position:absolute;width:50px;height:50px;left:calc(50% - 25px);top:calc(50% - 25px);z-index:9;opacity:0;transition:0.4s;font-size:50px;color:#86b12e;
           &::before{margin:0;}
         }
@@ -110,7 +110,7 @@ body {background-color:#f0f0f0;}
         }
       }
     }
-    .pro_imgslider{width:500px;overflow:initial;margin-left:0;
+    .pro_imgslider{width:500px;overflow:visible;margin-left:0;
       @include breakpoint (medium down) {width:320px;} //1024　↓
       @include breakpoint (small down) {width:100%;display:block;max-width:380px;margin:20px auto;} //960　↓
       .swiper-wrapper{
@@ -238,7 +238,7 @@ body {background-color:#f0f0f0;}
                 @include breakpoint (medium down) {width:30px;height:30px;} //1024　↓
                 img{width:100%;}
               }
-              .coverbox{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0;transition:0.4s;background-color:rgba(0,0,0,0.6);}
+              .coverbox{position:absolute;width:100%;height:100%;top:0;left:0;opacity:0;transition:0.4s;background-color:rgba(0,0,0,0.6);z-index:9;}
               .addicon{position:absolute;width:50px;height:50px;left:calc(50% - 25px);top:calc(50% - 25px);z-index:9;opacity:0;transition:0.4s;font-size:50px;color:#86b12e;
                 &::before{margin:0;}
               }

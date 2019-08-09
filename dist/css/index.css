@@ -373,12 +373,10 @@ header.top {
             -webkit-transition: 0.4s;
             transition: 0.4s; }
     .product_index .product_center .swiper-container {
-      overflow: initial;
-      position: absolute;
+      overflow: visible;
+      height: 0;
       z-index: 1;
-      opacity: 0;
-      top: 0;
-      left: 0; }
+      opacity: 0; }
       @media screen and (max-width: 63.99875em) {
         .product_index .product_center .swiper-container {
           padding: 0 40px;
@@ -389,6 +387,7 @@ header.top {
           padding: 0 20px; } }
       .product_index .product_center .swiper-container.click {
         position: relative;
+        height: auto;
         z-index: 9;
         opacity: 1; }
         @media screen and (max-width: 63.99875em) {
