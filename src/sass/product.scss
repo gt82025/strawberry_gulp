@@ -12,7 +12,7 @@ $block6:#666666;
 $rad:#c43632;
 $white:#ffffff;
 body {background-color:#f0f0f0;} 
-.product_content{background-image:url(../images/dotbg.png);background-size:80%;background-repeat:repeat-x;background-position:center top;padding:0 0 70px 0;
+.product_content{background-image:url(../images/dotbg2.png);background-size:80%;background-repeat:repeat-x;background-position:center top;padding:0 0 70px 0;
   @include breakpoint (medium down) {padding:0 0 30px 0;background-size:1366px;} //1024　↓
   .productcenter{@extend %content_w;margin:0 auto;position:relative;overflow:hidden;
     &.view{padding:90px 0;overflow:visible;display:flex;

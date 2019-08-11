@@ -5753,8 +5753,8 @@ html.is-reveal-open {
 /* Vendor Style*/
 @font-face {
   font-family: "icon";
-  src: url("../fonts/icons/icon.eot?1565429820027");
-  src: url("../fonts/icons/icon.eot?#iefix-1565429820027") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1565429820027") format("woff2"), url("../fonts/icons/icon.woff?1565429820027") format("woff"), url("../fonts/icons/icon.ttf?1565429820027") format("truetype"), url("../fonts/icons/icon.svg?1565429820027#icon") format("svg"); }
+  src: url("../fonts/icons/icon.eot?1565532878920");
+  src: url("../fonts/icons/icon.eot?#iefix-1565532878920") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1565532878920") format("woff2"), url("../fonts/icons/icon.woff?1565532878920") format("woff"), url("../fonts/icons/icon.ttf?1565532878920") format("truetype"), url("../fonts/icons/icon.svg?1565532878920#icon") format("svg"); }
 
 .be-icon:before {
   font-family: "icon";
@@ -6280,17 +6280,19 @@ header {
               fill: #fff; }
             header.top .headerbar .headercenter .pagelink .logo svg.avgalllogo.index path.g2 {
               fill: #fff; }
-  header.scroll .headerbar .headercenter .pagelink .logo svg.svglogo {
-    opacity: 1;
-    -webkit-transition: 0.4s 0.4s;
-    transition: 0.4s 0.4s; }
-  header.scroll .headerbar .headercenter .pagelink .logo svg.avgalllogo {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    opacity: 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s; }
+  header.scroll .headerbar .headercenter .pagelink .logo {
+    height: 82px; }
+    header.scroll .headerbar .headercenter .pagelink .logo svg.svglogo {
+      opacity: 1;
+      -webkit-transition: 0.4s 0.4s;
+      transition: 0.4s 0.4s; }
+    header.scroll .headerbar .headercenter .pagelink .logo svg.avgalllogo {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      opacity: 0;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
   header.scrolling {
     top: -100%;
     -webkit-transition: 0.4s;

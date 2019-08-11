@@ -148,34 +148,46 @@ if (b) {
     } else {
       $('header , .menu_button , .carcontent , .mo_logo').removeClass('top');
       $('header , .menu_button , .carcontent , .mo_logo').addClass('scroll');
-    }
+    } // var scroll_top=0,t=0; 
 
-    var p = 0,
-        t = 0;
+
     $(document).scroll(function () {
-      var scroll_top = $(document).scrollTop();
-      var header_bar_height = $('header').height();
+      scroll_top = $(document).scrollTop();
+      var header_bar_height = $('header').height(); // p = $(this).scrollTop();
 
       if (scroll_top > 0) {
         $('header , .menu_button , .carcontent , .mo_logo').removeClass('top');
-        $('header , .menu_button , .carcontent , .mo_logo').addClass('scroll');
-        p = $(this).scrollTop();
-
-        if (t <= scroll_top) {
-          //下滚  
-          $('header , .mo_logo , .carcontent').addClass('scrolling');
-        } else {
-          //上滚  
-          $('header , .mo_logo , .carcontent').removeClass('scrolling');
-        }
-
-        setTimeout(function () {
-          t = scroll_top;
-        }, 0);
-      } else if (scroll_top == 0) {
+        $('header , .menu_button , .carcontent , .mo_logo').addClass('scroll'); // if(t<=scroll_top){//下滚  
+        // 	$('header , .mo_logo , .carcontent').addClass('scrolling');
+        // }else if(t>scroll_top){//上滚  
+        // 	$('header , .mo_logo , .carcontent').removeClass('scrolling');
+        // }  
+        // setTimeout(function(){t = scroll_top;},0);    
+      } else if (scroll_top < header_bar_height) {
         $('header , .menu_button , .carcontent , .mo_logo').addClass('top');
         $('header , .menu_button , .carcontent , .mo_logo').removeClass('scroll');
-      }
+      } //記錄開始滾動位置
+
+
+      var before = $(this).scrollTop();
+      $(document).on("scroll", function () {
+        //記錄滾動之後的滾動位置變化
+        var after = $(this).scrollTop();
+
+        if (before > after) {
+          console.log("向上滾"); //把當前的滾動位置賦值給起始滾動位置
+
+          $('header , .mo_logo , .carcontent').removeClass('scrolling');
+          before = after;
+        } else if (after > before) {
+          console.log("向下滾");
+          $('header , .mo_logo , .carcontent').addClass('scrolling'); //把當前的滾動位置賦值給起始滾動位置
+
+          before = after;
+        } else {
+          console.log("error");
+        }
+      });
     });
     $(document).on('click', '.menu_button', function () {
       $('.menu').addClass('click');

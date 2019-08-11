@@ -14,7 +14,7 @@ $white:#ffffff;
 
 
 body {background-color:#f0f0f0;} 
-.service_content{width:100%;background-image:url(../images/dotbg.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 150px 0;
+.service_content{width:100%;background-image:url(../images/dotbg2.png);background-size:60%;background-repeat:repeat-x;background-position:center top;padding:70px 0 0 0;margin:0 0 150px 0;
   @include breakpoint (medium down) {padding:30px 0 0px 0;background-size:960px;margin:0 0 60px 0;} //1024　↓
   .servicecenter{@extend %content_w;margin:0 auto 70px auto;position:relative;overflow:hidden;
     @include breakpoint (medium down) {margin:0 auto 40px auto;} //1024　↓
