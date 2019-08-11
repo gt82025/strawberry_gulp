@@ -797,7 +797,7 @@ body {
             .cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext:first-child {
               margin-left: 0px; }
           .cart_content .cartcenter .member_center .guestarea .guest_msg .textbox select {
-            -webkit-appearance: menulist; }
+            -webkit-appearance: none !important; }
           .cart_content .cartcenter .member_center .guestarea .guest_msg .radiobox {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -1132,7 +1132,7 @@ body {
             border: none;
             color: #666666;
             font-size: 14px;
-            -webkit-appearance: menulist;
+            -webkit-appearance: none;
             height: 50px; }
             .cart_content .cartcenter .member_center .bookingarea .bi_box select option, .cart_content .cartcenter .member_center .bookingarea .bi_box input option {
               margin: 0 15px;
@@ -1152,7 +1152,7 @@ body {
     height: 100%; }
 
 select.msgtext {
-  -webkit-appearance: menulist; }
+  -webkit-appearance: none !important; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
