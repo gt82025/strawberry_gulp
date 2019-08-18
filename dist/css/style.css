@@ -5753,8 +5753,8 @@ html.is-reveal-open {
 /* Vendor Style*/
 @font-face {
   font-family: "icon";
-  src: url("../fonts/icons/icon.eot?1565532878920");
-  src: url("../fonts/icons/icon.eot?#iefix-1565532878920") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1565532878920") format("woff2"), url("../fonts/icons/icon.woff?1565532878920") format("woff"), url("../fonts/icons/icon.ttf?1565532878920") format("truetype"), url("../fonts/icons/icon.svg?1565532878920#icon") format("svg"); }
+  src: url("../fonts/icons/icon.eot?1566144586023");
+  src: url("../fonts/icons/icon.eot?#iefix-1566144586023") format("embedded-opentype"), url("../fonts/icons/icon.woff2?1566144586023") format("woff2"), url("../fonts/icons/icon.woff?1566144586023") format("woff"), url("../fonts/icons/icon.ttf?1566144586023") format("truetype"), url("../fonts/icons/icon.svg?1566144586023#icon") format("svg"); }
 
 .be-icon:before {
   font-family: "icon";

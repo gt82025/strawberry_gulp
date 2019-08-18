@@ -163,7 +163,7 @@ if (b) {
         // 	$('header , .mo_logo , .carcontent').removeClass('scrolling');
         // }  
         // setTimeout(function(){t = scroll_top;},0);    
-      } else if (scroll_top < header_bar_height) {
+      } else if (scroll_top <= header_bar_height) {
         $('header , .menu_button , .carcontent , .mo_logo').addClass('top');
         $('header , .menu_button , .carcontent , .mo_logo').removeClass('scroll');
       } //記錄開始滾動位置

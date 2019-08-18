@@ -1,0 +1,166 @@
+@font-face {
+	font-family: "icon";
+	src: url('../fonts/icons/icon.eot?1566144586023');
+	src: url('../fonts/icons/icon.eot?#iefix-1566144586023') format('embedded-opentype'),
+	url('../fonts/icons/icon.woff2?1566144586023') format('woff2'),
+	url('../fonts/icons/icon.woff?1566144586023') format('woff'),
+	url('../fonts/icons/icon.ttf?1566144586023') format('truetype'),
+	url('../fonts/icons/icon.svg?1566144586023#icon') format('svg');
+}
+
+.be-icon:before {
+	font-family: "icon";
+
+	// Font smoothing. That was taken from TWBS
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-style: normal;
+	font-weight: normal;
+
+	// For safety - reset parent styles, that can break glyph codes
+	font-variant: normal;
+	text-transform: none;
+	text-decoration: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// only necessary if not using the private unicode range (firstGlyph option)
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+
+	// fix buttons height, for twitter bootstrap
+	line-height: 1em;
+
+	// Animation center compensation - margins should be symmetric
+	// remove if not needed
+	margin-left: .2em;
+
+	// you can be more comfortable with increased icons size
+	// font-size: 120%;
+
+	// Uncomment for 3D effect
+	// text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+/* Glyphs list */
+
+
+.be-icon-arrow:before {
+ content: '\ea01';
+}
+
+.be-icon-booking:before {
+ content: '\ea02';
+}
+
+.be-icon-buttonarrow:before {
+ content: '\ea03';
+}
+
+.be-icon-car:before {
+ content: '\ea04';
+}
+
+.be-icon-cart:before {
+ content: '\ea05';
+}
+
+.be-icon-cartstep1:before {
+ content: '\ea06';
+}
+
+.be-icon-cartstep2:before {
+ content: '\ea07';
+}
+
+.be-icon-cartstep3:before {
+ content: '\ea08';
+}
+
+.be-icon-cartstep4:before {
+ content: '\ea09';
+}
+
+.be-icon-clock:before {
+ content: '\ea0a';
+}
+
+.be-icon-closeicon:before {
+ content: '\ea0b';
+}
+
+.be-icon-copy:before {
+ content: '\ea0c';
+}
+
+.be-icon-fb:before {
+ content: '\ea0d';
+}
+
+.be-icon-hovericon:before {
+ content: '\ea0e';
+}
+
+.be-icon-ig:before {
+ content: '\ea0f';
+}
+
+.be-icon-line:before {
+ content: '\ea10';
+}
+
+.be-icon-logo:before {
+ content: '\ea11';
+}
+
+.be-icon-mail:before {
+ content: '\ea12';
+}
+
+.be-icon-next:before {
+ content: '\ea13';
+}
+
+.be-icon-phone:before {
+ content: '\ea14';
+}
+
+.be-icon-pin:before {
+ content: '\ea15';
+}
+
+.be-icon-preson:before {
+ content: '\ea16';
+}
+
+.be-icon-prev:before {
+ content: '\ea17';
+}
+
+.be-icon-random:before {
+ content: '\ea18';
+}
+
+.be-icon-sale:before {
+ content: '\ea19';
+}
+
+.be-icon-search:before {
+ content: '\ea1a';
+}
+
+.be-icon-shape:before {
+ content: '\ea1b';
+}
+
+.be-icon-top:before {
+ content: '\ea1c';
+}
+
