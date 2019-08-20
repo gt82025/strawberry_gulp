@@ -140,7 +140,7 @@ body {background-color:#f0f0f0;}
           .mo_title{display:none;width:80px;float:left;background-color:$block3;color:$white;padding:8px 0;text-align:center;
             @include breakpoint (medium down) {display:block;}
           }
-          .tablbox{
+          .tablbox{position:relative;
             @include breakpoint (medium down) {width:calc(100% - 80px);float:right;padding:8px 15px;max-width:300px;}
             .propic{width:70px;height:80px;
               @include breakpoint (medium down) {width:50px;height:57.5px;} //1024　↓
@@ -152,6 +152,12 @@ body {background-color:#f0f0f0;}
               }
               h4{margin:0px 0 0 20px;
                 @include breakpoint (medium down) {margin:0px 0 0 15px;} //1024　↓
+              }
+            }
+            .icondelete{position:absolute;font-size:20px;right:0px;top:calc(50% - 10px);color:$block6;cursor:pointer;transition:0.4s;
+              @include breakpoint (small down) {top:5px;}
+              &:hover{color:$rad;transition:0.4s;
+                @include breakpoint (small down) {color:$block6;}
               }
             }
             h6{

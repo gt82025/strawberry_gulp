@@ -330,33 +330,54 @@ body {
             @media screen and (max-width: 63.99875em) {
               .cart_content .cartcenter .member_center .tablebox .tablearticle .mo_title {
                 display: block; } }
-          @media screen and (max-width: 63.99875em) {
-            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox {
-              width: calc(100% - 80px);
-              float: right;
-              padding: 8px 15px;
-              max-width: 300px; } }
-          .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic {
-            width: 70px;
-            height: 80px; }
+          .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox {
+            position: relative; }
             @media screen and (max-width: 63.99875em) {
-              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic {
-                width: 50px;
-                height: 57.5px; } }
-          .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text .pro_name {
-            color: #2b963d;
-            margin: 5px 0 0 20px; }
+              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox {
+                width: calc(100% - 80px);
+                float: right;
+                padding: 8px 15px;
+                max-width: 300px; } }
+            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic {
+              width: 70px;
+              height: 80px; }
+              @media screen and (max-width: 63.99875em) {
+                .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic {
+                  width: 50px;
+                  height: 57.5px; } }
+            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text .pro_name {
+              color: #2b963d;
+              margin: 5px 0 0 20px; }
+              @media screen and (max-width: 63.99875em) {
+                .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text .pro_name {
+                  margin: px 0 0 15px; } }
+            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text h4 {
+              margin: 0px 0 0 20px; }
+              @media screen and (max-width: 63.99875em) {
+                .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text h4 {
+                  margin: 0px 0 0 15px; } }
+            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .icondelete {
+              position: absolute;
+              font-size: 20px;
+              right: 0px;
+              top: calc(50% - 10px);
+              color: #666666;
+              cursor: pointer;
+              -webkit-transition: 0.4s;
+              transition: 0.4s; }
+              @media screen and (max-width: 39.99875em) {
+                .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .icondelete {
+                  top: 5px; } }
+              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .icondelete:hover {
+                color: #c43632;
+                -webkit-transition: 0.4s;
+                transition: 0.4s; }
+                @media screen and (max-width: 39.99875em) {
+                  .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .icondelete:hover {
+                    color: #666666; } }
             @media screen and (max-width: 63.99875em) {
-              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text .pro_name {
-                margin: px 0 0 15px; } }
-          .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text h4 {
-            margin: 0px 0 0 20px; }
-            @media screen and (max-width: 63.99875em) {
-              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox .propic_text h4 {
-                margin: 0px 0 0 15px; } }
-          @media screen and (max-width: 63.99875em) {
-            .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox h6 {
-              text-align: left; } }
+              .cart_content .cartcenter .member_center .tablebox .tablearticle .tablbox h6 {
+                text-align: left; } }
           @media screen and (max-width: 63.99875em) {
             .cart_content .cartcenter .member_center .tablebox .tablearticle.quantity {
               width: 100%;
