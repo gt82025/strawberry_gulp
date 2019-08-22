@@ -25,6 +25,7 @@ block script
           }
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
+          cartCalc();
         });
 
         btnDown.click(function() {
@@ -36,9 +37,65 @@ block script
           }
           spinner.find("input").val(newVal);
           spinner.find("input").trigger("change");
+          cartCalc();
         });
+        cartCalc();
       });
     });
+              function cartCalc() {
+        let pdTotalPriceArray = [];
+        let $pdTotalPrice = 0;
+        let $deliveryPrice
+        let $finalPrice
+        if ($('section.cart_content').length > 0) {
+            //計算單品
+            $('.tablebox.pdContent').each(function() {
+                let sp = parseInt($(this).find('.singlePriceVal').html());
+                let qu = $(this).find('input[value]').val();
+                let total = sp * qu;
+                $(this).find('.totalPriceVal').html(total);
+                pdTotalPriceArray.push(total);
+            })
+            //計算商品總值
+            $('h6.allPdTotalPrice').html(function() {
+                let $length = pdTotalPriceArray.length;
+                for (var i = 0; i < $length; i++) {
+                    $pdTotalPrice = $pdTotalPrice + pdTotalPriceArray[i];
+                }
+                //console.log($length)
+                //console.log($pdTotalPrice)
+                return $pdTotalPrice
+
+            });
+            //計算運費
+            if ($pdTotalPrice >= 1500) {
+                $deliveryPrice = 0;
+
+
+            } else {
+                $deliveryPrice = parseInt($('input[name=delivery]:checked').val());
+            }
+            $('.deliveryPrice').html(function() {
+                if ($('.end_pricetext input:checked').val() != 0 && $pdTotalPrice >= 1500) {
+                    return "0 <span style='opacity: 0.5;font-size: 14px;'>(滿額免運)</span>"
+                } else {
+                    return $deliveryPrice
+                }
+            });
+            $finalPrice = $pdTotalPrice + $deliveryPrice;
+            $('.finalPrice').html($finalPrice);
+            console.log($finalPrice);
+
+
+
+
+
+        }
+
+
+
+
+    }
 block content
   mixin pro_box (img, prename)
     .swiper-slide
@@ -90,7 +147,7 @@ block content
             h6 數量
           .tablearticle.amount
             h6 小計
-        .tablebox
+        .tablebox.pdContent
           .tablearticle.content
             h6.mo_title 內容
             .tablbox
@@ -102,39 +159,65 @@ block content
           .tablearticle.price
             h6.mo_title 單價
             .tablbox
-              h6 599
+              h6.singlePriceVal 599
           .tablearticle.quantity
             h6.mo_title 數量
             .tablbox
               .buttonbox
                 button.sub-btn.quantity-down: span －
-                input(type="number",value="1",min="0") 
+                input(type="number",value="1",min="1") 
                 button.add-btn.quantity-up: span ＋
           .tablearticle.amount
             h6.mo_title 小計
             .tablbox
-              h6 599
+              h6.totalPriceVal 599
+
+        .tablebox.pdContent
+          .tablearticle.content
+            h6.mo_title 內容
+            .tablbox
+              img.propic(src="images/index/proimg1.jpg", alt="")
+              .propic_text
+                h3.pro_name 小果草莓
+                h4 ( 2盒裝 ) 20顆/盒
+              i.icondelete.be-icon.be-icon-icondelete
+          .tablearticle.price
+            h6.mo_title 單價
+            .tablbox
+              h6.singlePriceVal 899
+          .tablearticle.quantity
+            h6.mo_title 數量
+            .tablbox
+              .buttonbox
+                button.sub-btn.quantity-down: span －
+                input(type="number",value="1",min="1") 
+                button.add-btn.quantity-up: span ＋
+          .tablearticle.amount
+            h6.mo_title 小計
+            .tablbox
+              h6.totalPriceVal 599   
+
         .tablebox.auto
           .end_pricetext 
             h6 合計
           .tablearticle.amount
-            h6 599
+            h6.allPdTotalPrice 599
         .tablebox.auto
           .end_pricetext 
             label.radiobox
-              input(type="radio",name="delivery")
+              input(type="radio",name="delivery",value="0")
               h6 自取
             label.radiobox
-              input(type="radio",name="delivery")
+              input(type="radio",name="delivery",value="150",checked)
               h6 宅配 
                 span (運費150，滿1,500免運)
           .tablearticle.amount
-            h6 0
+            h6.deliveryPrice 0
         .tablebox.totlepay
           .end_pricetext 
             h6 總計
           .tablearticle.amount
-            h6 599
+            h6.finalPrice 599
         .salebar
           h6.saletext 折扣代碼
           .salebox 
