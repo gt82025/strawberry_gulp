@@ -11,6 +11,55 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,400,700,900&amp;display=swap">
     <link type="text/css" rel="stylesheet" href="css/vendor/swiper/swiper.css">
     <link type="text/css" rel="stylesheet" href="css/cart.min.css">
+            <style>
+
+.cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext select{
+display: block;
+width: 100%;
+position: relative;
+height: 100%;
+padding-right: 0;
+padding-left: 0;
+background-color: #f0f0f0;
+border: 1px solid #f0f0f0;
+font-size: 14px;
+}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext input{
+ display: block;
+width: 100%;
+position: relative;
+height: 100%;
+padding-right: 0;
+padding-left: 0;
+background-color: #f0f0f0;
+border: 1px solid #f0f0f0;
+font-size: 14px;
+
+}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext{
+  position: relative;
+}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext::after{
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 6px 0 6px;
+border-color: #2b963d transparent transparent transparent; 
+display: block;
+content: '';
+position: absolute;
+top: 50%;
+right: 5px;
+}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .textbox .msgtext[data-role=zipcode]::after{
+  display: none;
+}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .msgtext::-webkit-input-placeholder{color:#848484;}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .msgtext:-moz-placeholder{color:#848484;}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .msgtext::-moz-placeholder{color:#848484;}
+.cart_content .cartcenter .member_center .guestarea .guest_msg .msgtext:-ms-input-placeholder{color:#848484;}
+
+    </style>
   </head>
   <body>
     <header>
@@ -117,11 +166,11 @@
             <h2 class="guesttitle">編輯會員資料</h2>
             <div class="guest_msg">
               <h6 class="msgtitle">信箱 E-mail</h6>
-              <input class="msgtext" type="text">
+              <input class="msgtext" type="text" placeholder="請填寫正確的郵件信箱">
             </div>
             <div class="guest_msg helf">
               <h6 class="msgtitle">姓名 Your Name</h6>
-              <input class="msgtext" type="text">
+              <input class="msgtext" type="text" placeholder="請填寫正確姓名">
             </div>
             <div class="guest_msg helf right">
               <h6 class="msgtitle">性別 Gender</h6>
@@ -136,24 +185,20 @@
             </div>
             <div class="guest_msg">
               <h6 class="msgtitle">手機號碼 Mobile</h6>
-              <input class="msgtext" type="text">
+              <input class="msgtext" type="text" placeholder="請填入正確連絡電話">
             </div>
             <div class="guest_msg">
               <h6 class="msgtitle">地址 Address</h6>
               <div class="textbox three">
-                <input class="msgtext" type="text">
-                <select class="msgtext" name="">
-                  <option value="">鄉鎮區</option>
-                  <option value="">區1</option>
-                </select>
-                <select class="msgtext" name="">
-                  <option value="">郵遞區</option>
-                  <option value="">001</option>
-                </select>
+<div class="textbox three twzipcode">
+    <div class="msgtext" data-role="county" data-label="請選擇縣市" data-name="表單名稱" data-value="預設值" data-css="msgtext" data-hidden="隱藏的縣市" data-required="1|0"></div>
+    <div class="msgtext" data-role="district" data-label="選擇鄉鎮區" data-name="表單名稱" data-value="預設值" data-css="" data-hidden="隱藏的縣市" data-required="1|0"></div>
+    <div class="msgtext" data-role="zipcode" data-name="表單名稱" data-value="郵遞區號" data-css="" data-placeholder="欄位說明" data-type="text|number" data-min="最小值，type=number 時有效" data-max="最大值，type=number 時有效" data-step="步進值，type=number 時有效" data-maxlength="最大長度，type=text 時有效" data-pattern="Regular expression" data-readonly="1|0"></div>
+</div>  
               </div>
             </div>
             <div class="guest_msg">
-              <input class="msgtext" type="text">
+              <input class="msgtext" type="text" placeholder="請填入正確的街道地址">
             </div>
             <div class="guest_msg">
               <label class="radiobox">
@@ -254,12 +299,22 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.1/js/foundation.min.js"></script>
     <script type="text/javascript" src="js/vendor/fastclick.min.js"></script>
     <script type="text/javascript" src="js/vendor/easeScroll/jquery.easeScroll.min.js"></script>
+    <script type="text/javascript" src="js/vendor/twzipcode.js"></script>
     <script type="text/javascript" src="js/all.js"></script>
     <script type="text/javascript" src="js/vendor/swiper/swiper.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {
-          
-      });
+$(document).ready(function () {
+TWzipCode();
+});
+      function TWzipCode(){
+        var twzipcode = new TWzipcode('.twzipcode', {
+
+
+});
+
+
+
+      }
     </script>
   </body>
 </html>
